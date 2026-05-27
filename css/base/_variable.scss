@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+// font
+$Pretendard: "Pretendard", sans-serif;
+$Prompt: "Prompt", sans-serif;
+
+// base
+$font-size: 0;
+$fontSize-default: 16;
+
+$black: #000000;
+$white: #ffffff;
+
+// background color
+$bg-100: #F6F6F6;
+
+// text color
+$text-100: #1C1C1C;
+$text-200: #444444;
+$text-300: #666666;
+$text-400: #999999;
+$text-500: #AAAAAA;
+
+// border color
+$border-100: #1C1C1C;
+$border-200: #1E6E5D;
+$border-300: #E8E8E8;
+$border-400: #DDDDDD;
+$border-500: #CCCCCC;
+
+// dimmed color
+$dim-100: rgba(0, 0, 0, 0.2);
+$dim-200: rgba(0, 0, 0, 0.5);
+$dim-300: rgba(0, 0, 0, 0.8);
+
+$gridCount: 12;
+$gutter: 30;
+
+// path
+$fontPath: "/fonts/";
+$imgPath: "/images/";
+
+$gridCntP: 12;
+$gridCntT: 8;
+$gridCntM: 4;
+$gridGap: 20;
+$gridMargin: 50;
