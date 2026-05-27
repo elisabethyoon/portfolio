@@ -573,8 +573,7 @@ body.overflow {
   position: relative;
   width: max(calc(15px * var(--base-ratio)), calc(calc(15 / var(--base-size)) * var(--base-percent)));
   height: max(calc(19px * var(--base-ratio)), calc(calc(19 / var(--base-size)) * var(--base-percent)));
-  background: url("/images/main/scroll_icon.svg") center no-repeat;
-  background-size: cover;
+  background: url("../../images/main/scroll_icon.svg") center/cover no-repeat;
   -webkit-animation: scrollDown 1.8s ease-in-out infinite;
           animation: scrollDown 1.8s ease-in-out infinite;
 }
@@ -613,8 +612,7 @@ body.overflow {
   #wrap .scroll_box .scroll_arrow {
     width: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
     height: max(calc(15px * var(--base-ratio)), calc(calc(15 / var(--base-size)) * var(--base-percent)));
-    background: url("/images/main/scroll_icon_m.svg") center no-repeat;
-    background-size: cover;
+    background: url("../../images/main/scroll_icon_m.svg") center/cover no-repeat;
   }
 }
 #wrap .swiper-scrollbar {

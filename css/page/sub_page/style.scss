@@ -31,7 +31,7 @@
                         left: to_vw(40);
                         width: to_vw(32);
                         height: to_vw(32);
-                        @include background('button/arrow_big_bk.svg', 0 0, no-repeat, cover);
+                        background: url('../../../images/button/arrow_big_bk.svg') no-repeat 0 0 / cover;
                         transform: rotate(180deg);
                     }
                     .txt_box {
@@ -106,7 +106,7 @@
                             height: to_vw(16);
                             margin-left: to_vw(6);
                             transition: transform 0.4s;
-                            @include background('button/arrow_big_bk.svg', 0 0, no-repeat, cover)
+                            background: url('../../../images/button/arrow_big_bk.svg') no-repeat 0 0 / cover;
                         }
                     }
                 }

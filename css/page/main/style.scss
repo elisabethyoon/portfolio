@@ -431,7 +431,7 @@
 		top: 0;
 		width: 100vw;
 		height: 100vh;
-		@include background('main/overlay.gif');
+		background-image: url('../../../images/main/overlay.gif');
 		background-position: 0 0;
 		background-size: 250px;
 		opacity: 0.06;

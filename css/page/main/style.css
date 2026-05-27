@@ -405,7 +405,7 @@
     padding: max(calc(112px * var(--base-ratio)), calc(calc(112 / var(--base-size)) * var(--base-percent))) max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent)));
   }
   #header .gnb_wrap .banner {
-    background: url("../../images/common/header_banner_mobile.png") center no-repeat;
+    background: url("/images/common/header_banner_mobile.png") center no-repeat;
     background-size: cover;
   }
   #header .etc_wrap {
@@ -585,7 +585,7 @@
   top: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url("../../images/main/overlay.gif");
+  background-image: url("../../../images/main/overlay.gif");
   background-position: 0 0;
   background-size: 250px;
   opacity: 0.06;

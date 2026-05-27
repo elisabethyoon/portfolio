@@ -176,8 +176,7 @@
   left: max(calc(40px * var(--base-ratio)), calc(calc(40 / var(--base-size)) * var(--base-percent)));
   width: max(calc(32px * var(--base-ratio)), calc(calc(32 / var(--base-size)) * var(--base-percent)));
   height: max(calc(32px * var(--base-ratio)), calc(calc(32 / var(--base-size)) * var(--base-percent)));
-  background: url("/images/button/arrow_big_bk.svg") 0 0 no-repeat;
-  background-size: cover;
+  background: url("../../../images/button/arrow_big_bk.svg") no-repeat 0 0/cover;
   transform: rotate(180deg);
 }
 #wrap.sub_page .content_wrap .con01 .txt_box .sub_tit {
@@ -255,8 +254,7 @@
   height: max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent)));
   margin-left: max(calc(6px * var(--base-ratio)), calc(calc(6 / var(--base-size)) * var(--base-percent)));
   transition: transform 0.4s;
-  background: url("/images/button/arrow_big_bk.svg") 0 0 no-repeat;
-  background-size: cover;
+  background: url("../../../images/button/arrow_big_bk.svg") no-repeat 0 0/cover;
 }
 @media (max-width: 1024px) {
   #wrap.sub_page .content_wrap {
