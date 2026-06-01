@@ -6,84 +6,96 @@
 
 #wrap {
     &.travel {
-        .gnb_wrap{
+        // common
+        .tit_box {
+            h3 {
+                padding-bottom: to_vw(8);
+                font-family: 'GreatVibes';
+                font-weight: normal;
+                @include fontSize(60, 100, 64);
+                color: $white;
+            }
+            span {
+                @include fontSize(20, 0, 24);
+                color: $white;
+            }
+        }
+
+
+        // header
+        #header {
             position:absolute;
-            left:0;
-            top:0;
             width:100%;
             height:to_vw(110);
+            z-index:10000;
+            outline:none;
+            left:0;
+            top:0;
+            background:transparent;
+            transition:background 0.3s, transform 0.4s;
+        }
+        .logo {
+			z-index:5;
+            position:absolute;
+			top: 50%;
+			left: to_vw(48);
+            transform: translateY(-50%);
+			transition:opacity 0.35s;
+            color: $white;
+            font-family: 'GreatVibes';
+            font-weight: normal;
+            font-size: to_vw(60);
+        }
+        .gnb_wrap{
             z-index:2;
+            position:absolute;
+            top:50%;
+            right: to_vw(48);
+            transform: translateY(-50%);
         }
         .gnb_list {
-            z-index: 2;
             display: flex;
-            overflow: hidden;
-            position: fixed;
-            left: 50%;
-            opacity: 0;
-            background-color: rgba(0, 0, 0, 0.6);
-            transform: translate(-50%, to_vw(20));
-            animation-duration: cubic-bezier(0.25, 0.8, 0.25, 1);
+            gap: to_vw(12);
+            // opacity: 0;
     
             &.gnbShow {
-                animation: gnbAni 0.8s both;
-    
-                @keyframes gnbAni {
-                    0% {
-                        opacity: 1;
-                        width: to_vw(40);
-                        height: to_vw(40);
-                        border-radius: 50%;
-                    }
-                    25% {
-                        width: to_vw(80);
-                        height: to_vw(80);
-                    }
-                    50% {
-                        width: to_vw(60);
-                        height: to_vw(60);
-                        border-radius: 50%;
-                    }
-                    70% {
-                        border-radius: to_vw(25);
-                    }
-                    100% {
-                        opacity: 1;
-                        width: 80%;
-                        height: to_vw(60);
-                        border-radius: to_vw(50);
-                    }
-                }
+                opacity: 1;
             }
             li {
-                transform: translateY(80%);
-                opacity: 0;
-                width: 20%;
-                padding: to_vw(18);
+                padding: to_vw(16) to_vw(24);
                 text-align: center;
                 cursor: pointer;
     
                 &:hover {
                     opacity: 1;
-                    span {
-                        color: $white;
-                    }
                 }
                 span {
                     position: relative;
-                    @include fontSize(18, -20, 24);
+                    @include fontSize(20, -20, 24);
+                    color: $white;
                 }
                 &.active {
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        left: 50%;
+                        bottom: 0;
+                        height: to_vw(2);
+                        width: 100%;
+                        transform: translateX(-50%);
+                        background: $white;
+                    }
                     span {
-                        color: $white;
-    
                         &::before {
                             content: '';
                             position: absolute;
-                            height: to_vw(2);
-                            width: 100%;
+                            left: 50%;
                             bottom: to_vw(-18);
+                            width: to_vw(6);
+                            height: to_vw(6);
+                            transform: translateX(-50%);
                             background: $white;
+                            border-radius: 50%;
                         }
                     }
                 }
@@ -224,6 +236,7 @@
                 padding: to_vw(200) 0 to_vw(240);
 
                 .bg_box {
+                    z-index: -1;
                     position: absolute;
                     top: 0;
                     left: 0;
@@ -237,6 +250,414 @@
 
                     &.active {
                         transform: scale(1);
+                    }
+                }
+            }
+            .con {
+                &01 {
+                    .kv_tit {
+
+                        > strong {
+                            display: block;
+                            font-family: 'GreatVibes';
+                            font-weight: normal;
+                            @include fontSize(80, 0, 100);
+                            color: $white;
+    
+                            &:last-child {
+                                padding-left: to_vw(60);
+                            }
+                        }
+                    }
+                    .kv_sub_txt {
+                        padding-top: to_vw(32);
+                        @include fontSize(20, 0, 32);
+                        color: $white;
+                    }
+                }
+                &02 {
+                    padding-top: to_vw(300);
+
+                    .cont {
+                        + .cont {
+                            padding-top: to_vw(180);
+                        }
+                        &01 {
+                            .cont01_box {
+                                @include flex($justify-content: space-between, $align-items:flex-end);
+                                gap: to_vw(48);
+                            }
+                            .tit_box {
+                                width: calc(60% - to_vw(48));
+
+                                h3 {
+                                    position: relative;
+                                    padding-left: to_vw(60);
+
+                                    .shape_icon {
+                                        position: absolute;
+                                        top: 0;
+                                        left: to_vw(420);
+                                        display: inline-block;
+                                        width: to_vw(600);
+                                        height: to_vw(130); 
+                                        background: url('../../../images/travel/travel_balloon_path.svg') no-repeat 0 0 / cover;
+                                    }
+                                }
+                                .tit_info {
+                                    @include fontSize(28, 0, 38);
+                                    color: $white;
+                                }
+                                .line {
+                                    display: inline-block;
+                                    width: to_vw(20);
+                                    height: to_vw(2);
+                                    margin: to_vw(36) 0;
+                                    background-color: $white;
+                                }
+                                > strong {
+                                    display: block;
+                                    padding-top: to_vw(48);
+                                    @include fontSize(18, 0, 24);
+                                    color: $white;
+                                }
+                            }
+                            .info_item {
+                                @include flex();
+                                padding-top: to_vw(24);
+
+                                .ux_item {
+                                    position: relative;
+                                    width: 25%;
+                                    // padding: to_vw(40);
+
+                                    img {
+                                        width: to_vw(72);
+                                        margin: 0 auto;
+                                    }
+
+                                    &::after {
+                                        content: '';
+                                        position: absolute;
+                                        top: 50%;
+                                        right: 0;
+                                        width: to_vw(1);
+                                        height: 70%;
+                                        transform: translateY(-50%);
+                                        background-color: rgba(255,255,255,0.5);
+                                    }
+                                    span {
+                                        display: block;
+                                        padding-top: to_vw(8);
+                                        @include fontSize(16, 0, 24);
+                                        color: $white;
+                                        text-align: center;
+                                    }
+                                    &:last-child {
+                                        &::after {
+                                            display: none;
+                                        }
+                                    }
+                                }
+                            }
+                            .img_box {
+                                width: calc(40% - to_vw(48));
+                            }
+                        }
+                        &02 {
+                            .tit_box {
+                                position: relative;
+                                padding-bottom: to_vw(100);
+                                text-align: center;
+                            }
+                            .dot_top_line {
+                                position: absolute;
+                                top: to_vw(20);
+                                left: 50%;
+                                width: to_vw(1000);
+                                height: to_vw(229); 
+                                transform: translateX(-50%);
+                                background: url('../../../images/travel/flight_path_white.svg') no-repeat 0 0 / cover;
+                            }
+                            .list_box {
+                                @include flex($justify-content: space-between);
+                                gap: to_vw(32);
+
+                                .box_item {
+                                    position: relative;
+                                    width: calc(33.333% - to_vw(32));
+                                    border-radius: to_vw(16);
+                                    background-color: #eaf2fb;
+
+                                    @for $i from 1 to 4 {
+                                        &:nth-child(#{$i}) {
+                                            .icon_box {
+                                                .icon_img01 {
+                                                    display: inline-block;
+                                                    position: absolute;
+                                                    top: to_vw(-10);
+                                                    left: 40%;
+                                                    width: to_vw(72);
+                                                    height: to_vw(72);
+                                                    background: url('../../../images/travel/cont02_item0#{$i}_01.png') no-repeat 0 0 / cover;
+                                                }
+                                                .icon_img02 {
+                                                    display: inline-block;
+                                                    position: absolute;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    &.box01 {
+                                        .icon_box {
+                                            .icon_img01 {
+                                                z-index: 1;
+                                            }
+                                            .icon_img02 {
+                                                top: to_vw(10);
+                                                left: 50%;
+                                                width: to_vw(120);
+                                                height: to_vw(48);
+                                                background: url('../../../images/travel/cont02_item01_02.svg') no-repeat 0 0 / cover;
+                                            }
+                                        }
+                                    }
+                                    &.box02 {
+                                        .icon_box {
+                                            .icon_img02 {
+                                                top: to_vw(40);
+                                                right: to_vw(-24);
+                                                width: to_vw(80);
+                                                height: to_vw(80);
+                                                background: url('../../../images/travel/cont02_item02_02.png') no-repeat 0 0 / cover;
+                                            }
+                                        }
+                                    }
+                                    &.box03 {
+                                        .icon_box {
+                                            .icon_img02 {
+                                                top: to_vw(20);
+                                                right: to_vw(8);
+                                                width: to_vw(120);
+                                                height: to_vw(93);
+                                                background: url('../../../images/travel/cont02_item03_02.png') no-repeat 0 0 / cover;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            .box_inner {
+                                @include flex($justify-content: space-between);
+                                flex-direction: column;
+                                height: 100%;
+                                // gap: to_vw(24);
+                                padding: to_vw(30) to_vw(24) to_vw(60);
+                            }
+                            .txt_box {
+                                
+                                .period {
+                                    @include fontSize(16, 0, 20);
+                                    color: #2649a0;
+                                }
+                                .step {
+                                    display: block;
+                                    padding-top: to_vw(24);
+                                    @include fontSize(20, 0, 24);
+                                    color: #2649a0;
+                                    font-family: 'GreatVibes';
+                                    font-weight: normal;
+                                }
+                            }
+                            .journey_step {
+                                position: relative;
+                                width: to_vw(280);
+                                height: to_vw(187);
+                                margin: to_vw(-50) auto 0;
+                                background: url('../../../images/travel/paper_index.png') no-repeat 0 0 / cover;
+                                
+                                > p {
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    transform: translate(-50%, -50%);
+                                    width: 100%;
+                                    @include fontSize(28, 0, 32);
+                                    color: #2649a0;
+                                    font-family: 'GreatVibes';
+                                    font-weight: normal;
+                                    text-align: center;
+                                }
+                            }
+                            .sub_box {
+                                margin-top: to_vw(-40);
+
+                                .company_txt {
+                                    @include fontSize(36, -20, 36);
+                                    color: #071d57;
+                                    text-align: center;
+
+                                    > span {
+                                        display: inline-block;
+                                        @include fontSize(18, -20, 32);
+                                        color: #676a70;
+                                    }
+                                }
+                                .line {
+                                    display: block;
+                                    width: to_vw(20);
+                                    height: to_vw(2);
+                                    margin: to_vw(16) auto;
+                                    background-color: #2649a0;
+                                    text-align: center;
+                                }
+                                .sub_txt {
+                                    @include fontSize(20, -20, 24);
+                                    color: #112d75;
+                                    text-align: center;
+                                }
+                            }
+                            .info_box {
+                                margin-top: to_vw(48);
+                                padding-top: to_vw(36);
+                                border-top: to_vw(1) dotted #acb8d6;
+
+                                li {
+                                    @include fontSize(20, 0, 24);
+                                    color: #112d75;
+
+                                    + li {
+                                        padding-top: to_vw(12);
+                                    }
+                                }
+                            }
+                        }
+                        &03 {
+                            .tit_box {
+                                padding-bottom: to_vw(100);
+                                text-align: center;
+                            }
+                            .project_swiper {
+                                overflow: visible;
+                                padding-bottom: to_vw(60);
+                            
+                                .swiper-wrapper {
+                                    align-items: center;
+                                }
+                            
+                                .swiper-slide {
+                                    position: relative;
+                                    overflow: hidden;
+                                    width: to_vw(520);
+                                    height: to_vw(300);
+                                    border-radius: to_vw(16);
+                                    transform: scale(0.82);
+                                    opacity: 0.45;
+                                    transition: transform 0.6s ease, opacity 0.6s ease;
+                                    z-index: 1;
+                            
+                                    .bg_img {
+                                        position: absolute;
+                                        inset: 0;
+                                        width: 100%;
+                                        height: 100%;
+                                    }
+                            
+                                    &::after {
+                                        content: "";
+                                        position: absolute;
+                                        inset: 0;
+                                        background: rgba(8, 24, 49, 0.45);
+                                        z-index: 1;
+                                    }
+                            
+                                    .slide_inner {
+                                        position: relative;
+                                        z-index: 2;
+                                        height: 100%;
+                                        padding: to_vw(32);
+                                        color: #fff;
+                                    }
+                            
+                                    // &.swiper-slide-prev {
+                                    //     transform: translateX(to_vw(80)) scale(0.82);
+                                    // }
+                            
+                                    // &.swiper-slide-next {
+                                    //     transform: translateX(to_vw(-80)) scale(0.82);
+                                    // }
+                                    // &.swiper-slide-prev {
+                                    //     margin-right: to_vw(-170);
+                                    //     z-index: 2;
+                                    // }
+                            
+                                    // &.swiper-slide-next {
+                                    //     margin-left: to_vw(-170);
+                                    //     z-index: 2;
+                                    // }
+                            
+                                    &.swiper-slide-active {
+                                        width: to_vw(700);
+                                        height: to_vw(360);
+                                        transform: scale(1);
+                                        opacity: 1;
+                                        z-index: 5;
+                                        box-shadow: 0 to_vw(20) to_vw(40) rgba(45, 78, 130, 0.25);
+                            
+                                        &::after {
+                                            background: rgba(8, 24, 49, 0.18);
+                                        }
+                                    }
+                            
+                                    @for $i from 1 through 12 {
+                                        &:nth-child(#{$i}) {
+                                            .bg_img {
+                                                $num: 13 - $i;
+                                                background: url('../../../images/project/project-image#{$num}.png') no-repeat center / cover;
+                                            }
+                                        }
+                                    }
+                                }
+                            
+                                .swiper-pagination {
+                                    bottom: 0;
+                                }
+                            }
+
+                            // .project_swiper {
+                            //     overflow: hidden;
+
+                            //     .swiper-slide {
+                            //         width: 100%;
+                            //         height: to_vw(420);
+                            //         border-radius: to_vw(16);
+
+                            //         .bg_img {
+                            //             position: absolute;
+                            //             top: 0;
+                            //             left: 0;
+                            //             width: 100%;
+                            //             height: 100%;
+                            //         }
+
+                            //         @for $i from 1 through 13 {
+                            //             &:nth-child(#{$i}) {
+                            //                 .bg_img {
+                            //                     $num: 13 - $i;
+                                
+                            //                     background: url('../../../images/project/project-image#{$num}.png') no-repeat 0 0 / cover;
+                            //                 }
+                            //             }
+                            //         }
+
+                            //         &.active {
+
+                            //         }
+                            //         .slide_inner {
+                            //             padding: to_vw(24);
+                            //         }
+                            //     }
+                            // }
+                        }
                     }
                 }
             }

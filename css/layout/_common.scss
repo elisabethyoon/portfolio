@@ -10,11 +10,8 @@
 		@include flex($align-items:center);
 		flex-direction: column;
 		gap: to_vw(10);
-		z-index: 2;
-		position: absolute;
-		bottom: to_vw(30);
-		left: 50%;
-		transform: translateX(-50%);
+		width: to_vw(30);
+		padding-top: to_vw(120);
 
 		.scroll_txt {
 			@include fontSize(16, 0, 20);

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="320" viewBox="0 0 1400 320">
+<style>
+  .flight-path{
+    fill:none;
+    stroke:#fff;
+    stroke-width:5;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-dasharray:7 12;
+  }
+  .dot{
+    fill:#fff;
+    stroke:#fff;
+    stroke-width:3;
+  }
+</style>
+
+<!-- left to right wavy dotted flight path with heart loop -->
+<path class="flight-path" d="
+  M 30 210
+  C 120 165, 190 150, 260 175
+  C 360 210, 470 220, 600 210
+  C 760 197, 890 183, 1010 135
+  C 1085 103, 1155 112, 1190 160
+  C 1232 218, 1135 245, 1085 180
+  C 1035 115, 1115 65, 1188 110
+  C 1255 150, 1315 122, 1370 82
+"/>
+
+<!-- small route points -->
+<circle class="dot" cx="185" cy="160" r="8"/>
+<circle cx="185" cy="160" r="3.5" fill="transparent"/>
+
+<circle class="dot" cx="685" cy="205" r="8"/>
+<circle cx="685" cy="205" r="3.5" fill="transparent"/>
+
+<!-- arrow head -->
+<path d="M1352 80 L1372 80 L1363 98" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

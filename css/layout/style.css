@@ -555,11 +555,8 @@ body.overflow {
   align-items: center;
   flex-direction: column;
   gap: max(calc(10px * var(--base-ratio)), calc(calc(10 / var(--base-size)) * var(--base-percent)));
-  z-index: 2;
-  position: absolute;
-  bottom: max(calc(30px * var(--base-ratio)), calc(calc(30 / var(--base-size)) * var(--base-percent)));
-  left: 50%;
-  transform: translateX(-50%);
+  width: max(calc(30px * var(--base-ratio)), calc(calc(30 / var(--base-size)) * var(--base-percent)));
+  padding-top: max(calc(120px * var(--base-ratio)), calc(calc(120 / var(--base-size)) * var(--base-percent)));
 }
 #wrap .scroll_box .scroll_txt {
   font-size: max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent)));
