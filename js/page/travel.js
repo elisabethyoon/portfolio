@@ -480,29 +480,42 @@ main.utils = {
 	 **/
 	cont03: function(){
         var swiper = new Swiper(".project_swiper", {
-            slidesPerView: 'auto',
-            centeredSlides: true,
-            spaceBetween: 0,
-            // freeMode: true,
-            loop: true,
-            speed: 700,
-            pagination: {
-              el: ".swiper-pagination",
-              clickable: true,
-            },
+            slidesPerView: 2,
+			spaceBetween: 20,
+			centeredSlides: false,
+			scrollbar: {
+				el: ".swiper-scrollbar",
+				hide: false,
+				draggable: true,
+				snapOnRelease: false,
+			},
         });
-        
-        // var swiper = new Swiper(".project_swiper", {
-        //     slidesPerView: "auto",
-        //     centeredSlides: true,
-        //     spaceBetween: 0,
-        //     loop: true,
-        //     speed: 700,
-        //     pagination: {
-        //         el: ".swiper-pagination",
-        //         clickable: true,
-        //     },
-        // });
+
+		var $videoWrap = $('.video_wrap');
+
+		gsap.to($videoWrap,{
+			scrollTrigger:{
+				id:"video",
+				trigger: '.cont04',
+				start:"top 70%",
+				scrub: true,
+				invalidateOnRefresh: true,
+				// markers: true,
+				onEnter:function(){
+					$videoWrap.find('video').get(0).play();
+				},
+				onLeave:function(){
+					$videoWrap.find('video').get(0).pause();
+				},
+				onLeaveBack:function(){
+					$videoWrap.find('video').get(0).pause();
+				},
+				onEnterBack:function(){
+					$videoWrap.find('video').get(0).play();
+
+				}
+			}
+		})
     },
 	init: function(){
 		main.utils.scroll();

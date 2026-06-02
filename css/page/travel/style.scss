@@ -6,6 +6,9 @@
 
 #wrap {
     &.travel {
+        .content {
+            padding: 0;
+        }
         // common
         .tit_box {
             h3 {
@@ -233,7 +236,7 @@
                 overflow: hidden;
                 position: relative;
                 width: 100%;
-                padding: to_vw(200) 0 to_vw(240);
+                padding: to_vw(200) 0 to_vw(140);
 
                 .bg_box {
                     z-index: -1;
@@ -250,6 +253,40 @@
 
                     &.active {
                         transform: scale(1);
+                    }
+                }
+                .video_wrap {
+                    overflow: hidden;
+                    position: absolute;
+                    width: 100%;
+                    left: 0;
+                    bottom: 0;
+                    height: to_vw(500);
+
+                    &::after {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: to_vw(180);
+                        transform: rotate(180deg);
+                        background: linear-gradient(180deg, rgba(153, 191, 225, 0) 1.87%, #99bfe1 100%);
+                    }
+
+                    video {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: to_vw(500);
+                        object-fit: fill;
+                    }
+                }
+                @include media(false, tablet) {
+                    video {
+                        display: none;
                     }
                 }
             }
@@ -283,6 +320,25 @@
                             padding-top: to_vw(180);
                         }
                         &01 {
+                            position: relative;
+                            .cloud_box {
+                                .cloud_img01 {
+                                    position: absolute;
+                                    top: 0;
+                                    left: 0;
+                                    width: to_vw(500);
+                                    height: to_vw(274);
+                                    background: url('../../../images/travel/cloud01.png') no-repeat 0 0 / cover;
+                                }
+                                .cloud_img02 {
+                                    position: absolute;
+                                    top: 0;
+                                    right: 0;
+                                    width: to_vw(500);
+                                    height: to_vw(274);
+                                    background: url('../../../images/travel/cloud01.png') no-repeat 0 0 / cover;
+                                }
+                            }
                             .cont01_box {
                                 @include flex($justify-content: space-between, $align-items:flex-end);
                                 gap: to_vw(48);
@@ -360,8 +416,37 @@
                                     }
                                 }
                             }
+                            
                             .img_box {
+                                position: relative;
                                 width: calc(40% - to_vw(48));
+                                box-shadow: to_vw(-3) to_vw(-3) to_vw(120) 0 rgba(68, 68, 68, 0.7);
+                                transform: rotate(4deg);
+
+                                .sticker_icon {
+                                    position: absolute;
+                                    top: to_vw(-30);
+                                    left: 50%;
+                                    width: to_vw(251);
+                                    height: to_vw(64);
+                                    transform: translateX(-50%) rotate(354deg);
+                                    background: url('../../../images/travel/paper_sticker.png') no-repeat 0 0 / cover;
+                                }
+                                .profile_img {
+                                    border: to_vw(10) solid $white;
+
+                                }
+                                .icon_stamp {
+                                    position: absolute;
+                                    top: to_vw(50);
+                                    right: to_vw(-100);
+                                    width: to_vw(160);
+                                    height: to_vw(124);
+                                    background: url('../../../images/travel/cont02_item03_02.png') no-repeat 0 0 / cover;
+                                }
+                            }
+                            .frame_box {
+                                background-color: $white;
                             }
                         }
                         &02 {
@@ -454,7 +539,8 @@
                                 padding: to_vw(30) to_vw(24) to_vw(60);
                             }
                             .txt_box {
-                                
+                                min-height: to_vw(380);
+
                                 .period {
                                     @include fontSize(16, 0, 20);
                                     color: #2649a0;
@@ -483,7 +569,7 @@
                                     width: 100%;
                                     @include fontSize(28, 0, 32);
                                     color: #2649a0;
-                                    font-family: 'GreatVibes';
+                                    font-family: 'Allura';
                                     font-weight: normal;
                                     text-align: center;
                                 }
@@ -517,7 +603,8 @@
                                 }
                             }
                             .info_box {
-                                margin-top: to_vw(48);
+                                margin-top: auto;
+                                // margin-top: to_vw(48);
                                 padding-top: to_vw(36);
                                 border-top: to_vw(1) dotted #acb8d6;
 
@@ -532,8 +619,10 @@
                             }
                         }
                         &03 {
+                            overflow: hidden;
+                            
                             .tit_box {
-                                padding-bottom: to_vw(100);
+                                padding-bottom: to_vw(48);
                                 text-align: center;
                             }
                             .project_swiper {
@@ -541,19 +630,19 @@
                                 padding-bottom: to_vw(60);
                             
                                 .swiper-wrapper {
-                                    align-items: center;
+                                    // align-items: center;
                                 }
                             
                                 .swiper-slide {
-                                    position: relative;
                                     overflow: hidden;
-                                    width: to_vw(520);
-                                    height: to_vw(300);
+                                    width: to_vw(578);
+                                    height: to_vw(420);
                                     border-radius: to_vw(16);
-                                    transform: scale(0.82);
-                                    opacity: 0.45;
-                                    transition: transform 0.6s ease, opacity 0.6s ease;
-                                    z-index: 1;
+                                    transform: rotate(-0.03deg);
+                                    
+                                    &:last-child {
+                                        margin-right: 0;
+                                    }
                             
                                     .bg_img {
                                         position: absolute;
@@ -565,18 +654,15 @@
                                     &::after {
                                         content: "";
                                         position: absolute;
-                                        inset: 0;
-                                        background: rgba(8, 24, 49, 0.45);
-                                        z-index: 1;
+                                        top: 0;
+                                        left: 0;
+                                        width: 70%;
+                                        height: 100%;
+                                        border-radius: to_vw(16) 0 0 to_vw(16);
+                                        background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #091125  100%);
                                     }
                             
-                                    .slide_inner {
-                                        position: relative;
-                                        z-index: 2;
-                                        height: 100%;
-                                        padding: to_vw(32);
-                                        color: #fff;
-                                    }
+                                   
                             
                                     // &.swiper-slide-prev {
                                     //     transform: translateX(to_vw(80)) scale(0.82);
@@ -595,18 +681,18 @@
                                     //     z-index: 2;
                                     // }
                             
-                                    &.swiper-slide-active {
-                                        width: to_vw(700);
-                                        height: to_vw(360);
-                                        transform: scale(1);
-                                        opacity: 1;
-                                        z-index: 5;
-                                        box-shadow: 0 to_vw(20) to_vw(40) rgba(45, 78, 130, 0.25);
+                                    // &.swiper-slide-active {
+                                    //     width: to_vw(700);
+                                    //     height: to_vw(360);
+                                    //     transform: scale(1);
+                                    //     opacity: 1;
+                                    //     z-index: 5;
+                                    //     box-shadow: 0 to_vw(20) to_vw(40) rgba(45, 78, 130, 0.25);
                             
-                                        &::after {
-                                            background: rgba(8, 24, 49, 0.18);
-                                        }
-                                    }
+                                    //     &::after {
+                                    //         background: rgba(8, 24, 49, 0.18);
+                                    //     }
+                                    // }
                             
                                     @for $i from 1 through 12 {
                                         &:nth-child(#{$i}) {
@@ -617,46 +703,149 @@
                                         }
                                     }
                                 }
-                            
                                 .swiper-pagination {
                                     bottom: 0;
                                 }
+                                .slide_inner {
+                                    @include flex($justify-content: space-between);
+                                    flex-direction: column;
+                                    position: relative;
+                                    z-index: 2;
+                                    height: 100%;
+                                    padding: to_vw(60) to_vw(42) to_vw(48);
+                                    color: #fff;
+                                }
+                                .project_tit {
+                                    .number {
+                                        padding: to_vw(4) to_vw(16);
+                                        border: to_vw(1) solid $white;
+                                        border-radius: to_vw(12);
+                                        @include fontSize(16, 0, 18);
+                                        color: $white;
+                                    }
+                                    > strong {
+                                        display: block;
+                                        padding-top: to_vw(40);
+                                        @include fontSize(36, -20, 38);
+                                        color: $white;
+                                    }
+                                    > p {
+                                        padding-top: to_vw(26);
+                                        @include fontSize(20, -20, 24);
+                                        font-weight: 400;
+                                        color: $white;
+                                    }
+                                }
+                                .link_txt {
+                                    display: inline-block;
+                                    padding: to_vw(12) 0;
+                                    @include fontSize(20, -20, 22);
+                                    font-weight: 400;
+                                    color: $white;
+
+                                    @include media(tablet, false) {
+                                        &:hover {
+                                            .arrow_btn {
+                                                transform: translateX(to_vw(8));
+                                            }
+                                        }
+                                    }
+                                    .arrow_btn {
+                                        display: inline-block;
+                                        width: to_vw(18);
+                                        height: to_vw(18);
+                                        margin-left: to_vw(6);
+                                        transition: transform 0.4s;
+                                        background: url('../../../images/button/arrow_big_w.svg') no-repeat 0 0 / cover;
+                                    }
+                                }
                             }
+                        }
+                        &04 {
+                            z-index: 1;
+                            position: relative;
 
-                            // .project_swiper {
-                            //     overflow: hidden;
+                            .icon_balloon {
+                                position: absolute;
+                                top: to_vw(100);
+                                right: to_vw(40);
+                                width: to_vw(350);
+                                height: to_vw(350);
+                                opacity: 0.8;
+                                background: url('../../../images/travel/air_balloon.png') no-repeat 0 0 / cover;
+                            }
+                            .tit_box {
+                                text-align: center;
 
-                            //     .swiper-slide {
-                            //         width: 100%;
-                            //         height: to_vw(420);
-                            //         border-radius: to_vw(16);
+                                h3 {
+                                    position: relative;
+                                    padding-bottom: to_vw(24);
+                                    color: #2167c5;
 
-                            //         .bg_img {
-                            //             position: absolute;
-                            //             top: 0;
-                            //             left: 0;
-                            //             width: 100%;
-                            //             height: 100%;
-                            //         }
+                                    .shape_icon {
+                                        display: inline-block;
+                                        position: absolute;
+                                        top: -90%;
+                                        left: 50%;
+                                        width: to_vw(200);
+                                        height: to_vw(133); 
+                                        transform: translateX(100%);
+                                        background: url('../../../images/travel/plane.png') no-repeat 0 0 / cover;
+                                    }
+                                }
+                                span {
+                                    line-height: 1.6;
+                                    color: #2167c5;
+                                }
+                            }
+                            .contact_box {
+                                @include flex($justify-content: center);
+                                gap: to_vw(40);
+                                padding-top: to_vw(160);
 
-                            //         @for $i from 1 through 13 {
-                            //             &:nth-child(#{$i}) {
-                            //                 .bg_img {
-                            //                     $num: 13 - $i;
-                                
-                            //                     background: url('../../../images/project/project-image#{$num}.png') no-repeat 0 0 / cover;
-                            //                 }
-                            //             }
-                            //         }
+                                > a {
+                                    @include flex($justify-content: center, $align-items: center);
+                                    gap: to_vw(12);
+                                    width: to_vw(240);
+                                    padding: to_vw(20) to_vw(38);
+                                    border-radius: to_vw(99);
+                                    font-size: to_vw(24);
+                                    font-weight: 700;
+                                   
+                                    transition-duration: 0.4s;
 
-                            //         &.active {
+                                    &:nth-child(1) {
+                                        color: $white;
+                                        background-color: #112d75;
+                                    }
+                                    &:nth-child(2) {
+                                        color: #112d75;
+                                        background-color: $white;
+                                    }
 
-                            //         }
-                            //         .slide_inner {
-                            //             padding: to_vw(24);
-                            //         }
-                            //     }
-                            // }
+                                    // @include media(tablet, false) {
+                                    //     &:hover {
+                                    //         background-color: $white;
+                                    //         color: #112d75;
+                                    //     }
+                                        
+                                    // }
+                                    > span {
+                                        display: inline-block;
+                                        
+                                    }
+                                    .github_icon {
+                                        width: to_vw(32);
+                                        height: to_vw(32);
+                                        background: url('../../../images/travel/github_icon.png') no-repeat 0 0 / contain;
+                                    }
+                                    .email_icon {
+                                        width: to_vw(32);
+                                        height: to_vw(32);
+                                        background: url('../../../images/travel/email_icon.png') no-repeat 0 0 / contain;
+                                    }
+                                }
+                            }
                         }
                     }
                 }

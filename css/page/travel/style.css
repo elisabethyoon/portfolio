@@ -144,6 +144,9 @@
     position: relative;
   }
 }
+#wrap.travel .content {
+  padding: 0;
+}
 #wrap.travel .tit_box h3 {
   padding-bottom: max(calc(8px * var(--base-ratio)), calc(calc(8 / var(--base-size)) * var(--base-percent)));
   font-family: "GreatVibes";
@@ -353,7 +356,7 @@
   overflow: hidden;
   position: relative;
   width: 100%;
-  padding: max(calc(200px * var(--base-ratio)), calc(calc(200 / var(--base-size)) * var(--base-percent))) 0 max(calc(240px * var(--base-ratio)), calc(calc(240 / var(--base-size)) * var(--base-percent)));
+  padding: max(calc(200px * var(--base-ratio)), calc(calc(200 / var(--base-size)) * var(--base-percent))) 0 max(calc(140px * var(--base-ratio)), calc(calc(140 / var(--base-size)) * var(--base-percent)));
 }
 #wrap.travel .sec01 .bg_box {
   z-index: -1;
@@ -370,6 +373,39 @@
 }
 #wrap.travel .sec01 .bg_box.active {
   transform: scale(1);
+}
+#wrap.travel .sec01 .video_wrap {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  height: max(calc(500px * var(--base-ratio)), calc(calc(500 / var(--base-size)) * var(--base-percent)));
+}
+#wrap.travel .sec01 .video_wrap::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: max(calc(180px * var(--base-ratio)), calc(calc(180 / var(--base-size)) * var(--base-percent)));
+  transform: rotate(180deg);
+  background: linear-gradient(180deg, rgba(153, 191, 225, 0) 1.87%, #99bfe1 100%);
+}
+#wrap.travel .sec01 .video_wrap video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: max(calc(500px * var(--base-ratio)), calc(calc(500 / var(--base-size)) * var(--base-percent)));
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+@media (max-width: 1024px) {
+  #wrap.travel .sec01 video {
+    display: none;
+  }
 }
 #wrap.travel .sec .con01 .kv_tit > strong {
   display: block;
@@ -395,6 +431,25 @@
 }
 #wrap.travel .sec .con02 .cont + .cont {
   padding-top: max(calc(180px * var(--base-ratio)), calc(calc(180 / var(--base-size)) * var(--base-percent)));
+}
+#wrap.travel .sec .con02 .cont01 {
+  position: relative;
+}
+#wrap.travel .sec .con02 .cont01 .cloud_box .cloud_img01 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: max(calc(500px * var(--base-ratio)), calc(calc(500 / var(--base-size)) * var(--base-percent)));
+  height: max(calc(274px * var(--base-ratio)), calc(calc(274 / var(--base-size)) * var(--base-percent)));
+  background: url("../../../images/travel/cloud01.png") no-repeat 0 0/cover;
+}
+#wrap.travel .sec .con02 .cont01 .cloud_box .cloud_img02 {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: max(calc(500px * var(--base-ratio)), calc(calc(500 / var(--base-size)) * var(--base-percent)));
+  height: max(calc(274px * var(--base-ratio)), calc(calc(274 / var(--base-size)) * var(--base-percent)));
+  background: url("../../../images/travel/cloud01.png") no-repeat 0 0/cover;
 }
 #wrap.travel .sec .con02 .cont01 .cont01_box {
   display: flex;
@@ -478,7 +533,33 @@
   display: none;
 }
 #wrap.travel .sec .con02 .cont01 .img_box {
+  position: relative;
   width: calc(40% - max(calc(48px * var(--base-ratio)), calc(calc(48 / var(--base-size)) * var(--base-percent))));
+  box-shadow: max(calc(calc(calc(3 / var(--base-size)) * var(--base-percent)) * -1)) max(calc(calc(calc(3 / var(--base-size)) * var(--base-percent)) * -1)) max(calc(120px * var(--base-ratio)), calc(calc(120 / var(--base-size)) * var(--base-percent))) 0 rgba(68, 68, 68, 0.7);
+  transform: rotate(4deg);
+}
+#wrap.travel .sec .con02 .cont01 .img_box .sticker_icon {
+  position: absolute;
+  top: max(calc(calc(calc(30 / var(--base-size)) * var(--base-percent)) * -1));
+  left: 50%;
+  width: max(calc(251px * var(--base-ratio)), calc(calc(251 / var(--base-size)) * var(--base-percent)));
+  height: max(calc(64px * var(--base-ratio)), calc(calc(64 / var(--base-size)) * var(--base-percent)));
+  transform: translateX(-50%) rotate(354deg);
+  background: url("../../../images/travel/paper_sticker.png") no-repeat 0 0/cover;
+}
+#wrap.travel .sec .con02 .cont01 .img_box .profile_img {
+  border: max(calc(10px * var(--base-ratio)), calc(calc(10 / var(--base-size)) * var(--base-percent))) solid #ffffff;
+}
+#wrap.travel .sec .con02 .cont01 .img_box .icon_stamp {
+  position: absolute;
+  top: max(calc(50px * var(--base-ratio)), calc(calc(50 / var(--base-size)) * var(--base-percent)));
+  right: max(calc(calc(calc(100 / var(--base-size)) * var(--base-percent)) * -1));
+  width: max(calc(160px * var(--base-ratio)), calc(calc(160 / var(--base-size)) * var(--base-percent)));
+  height: max(calc(124px * var(--base-ratio)), calc(calc(124 / var(--base-size)) * var(--base-percent)));
+  background: url("../../../images/travel/cont02_item03_02.png") no-repeat 0 0/cover;
+}
+#wrap.travel .sec .con02 .cont01 .frame_box {
+  background-color: #ffffff;
 }
 #wrap.travel .sec .con02 .cont02 .tit_box {
   position: relative;
@@ -579,6 +660,9 @@
   height: 100%;
   padding: max(calc(30px * var(--base-ratio)), calc(calc(30 / var(--base-size)) * var(--base-percent))) max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent))) max(calc(60px * var(--base-ratio)), calc(calc(60 / var(--base-size)) * var(--base-percent)));
 }
+#wrap.travel .sec .con02 .cont02 .txt_box {
+  min-height: max(calc(380px * var(--base-ratio)), calc(calc(380 / var(--base-size)) * var(--base-percent)));
+}
 #wrap.travel .sec .con02 .cont02 .txt_box .period {
   font-size: max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent)));
   line-height: 1.25;
@@ -612,7 +696,7 @@
   line-height: 1.1428571429;
   letter-spacing: 0em;
   color: #2649a0;
-  font-family: "GreatVibes";
+  font-family: "Allura";
   font-weight: normal;
   text-align: center;
 }
@@ -649,7 +733,7 @@
   text-align: center;
 }
 #wrap.travel .sec .con02 .cont02 .info_box {
-  margin-top: max(calc(48px * var(--base-ratio)), calc(calc(48 / var(--base-size)) * var(--base-percent)));
+  margin-top: auto;
   padding-top: max(calc(36px * var(--base-ratio)), calc(calc(36 / var(--base-size)) * var(--base-percent)));
   border-top: max(calc(1px * var(--base-ratio)), calc(calc(1 / var(--base-size)) * var(--base-percent))) dotted #acb8d6;
 }
@@ -662,27 +746,26 @@
 #wrap.travel .sec .con02 .cont02 .info_box li + li {
   padding-top: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
 }
+#wrap.travel .sec .con02 .cont03 {
+  overflow: hidden;
+}
 #wrap.travel .sec .con02 .cont03 .tit_box {
-  padding-bottom: max(calc(100px * var(--base-ratio)), calc(calc(100 / var(--base-size)) * var(--base-percent)));
+  padding-bottom: max(calc(48px * var(--base-ratio)), calc(calc(48 / var(--base-size)) * var(--base-percent)));
   text-align: center;
 }
 #wrap.travel .sec .con02 .cont03 .project_swiper {
   overflow: visible;
   padding-bottom: max(calc(60px * var(--base-ratio)), calc(calc(60 / var(--base-size)) * var(--base-percent)));
 }
-#wrap.travel .sec .con02 .cont03 .project_swiper .swiper-wrapper {
-  align-items: center;
-}
 #wrap.travel .sec .con02 .cont03 .project_swiper .swiper-slide {
-  position: relative;
   overflow: hidden;
-  width: max(calc(520px * var(--base-ratio)), calc(calc(520 / var(--base-size)) * var(--base-percent)));
-  height: max(calc(300px * var(--base-ratio)), calc(calc(300 / var(--base-size)) * var(--base-percent)));
+  width: max(calc(578px * var(--base-ratio)), calc(calc(578 / var(--base-size)) * var(--base-percent)));
+  height: max(calc(420px * var(--base-ratio)), calc(calc(420 / var(--base-size)) * var(--base-percent)));
   border-radius: max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent)));
-  transform: scale(0.82);
-  opacity: 0.45;
-  transition: transform 0.6s ease, opacity 0.6s ease;
-  z-index: 1;
+  transform: rotate(-0.03deg);
+}
+#wrap.travel .sec .con02 .cont03 .project_swiper .swiper-slide:last-child {
+  margin-right: 0;
 }
 #wrap.travel .sec .con02 .cont03 .project_swiper .swiper-slide .bg_img {
   position: absolute;
@@ -693,27 +776,12 @@
 #wrap.travel .sec .con02 .cont03 .project_swiper .swiper-slide::after {
   content: "";
   position: absolute;
-  inset: 0;
-  background: rgba(8, 24, 49, 0.45);
-  z-index: 1;
-}
-#wrap.travel .sec .con02 .cont03 .project_swiper .swiper-slide .slide_inner {
-  position: relative;
-  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 70%;
   height: 100%;
-  padding: max(calc(32px * var(--base-ratio)), calc(calc(32 / var(--base-size)) * var(--base-percent)));
-  color: #fff;
-}
-#wrap.travel .sec .con02 .cont03 .project_swiper .swiper-slide.swiper-slide-active {
-  width: max(calc(700px * var(--base-ratio)), calc(calc(700 / var(--base-size)) * var(--base-percent)));
-  height: max(calc(360px * var(--base-ratio)), calc(calc(360 / var(--base-size)) * var(--base-percent)));
-  transform: scale(1);
-  opacity: 1;
-  z-index: 5;
-  box-shadow: 0 max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) max(calc(40px * var(--base-ratio)), calc(calc(40 / var(--base-size)) * var(--base-percent))) rgba(45, 78, 130, 0.25);
-}
-#wrap.travel .sec .con02 .cont03 .project_swiper .swiper-slide.swiper-slide-active::after {
-  background: rgba(8, 24, 49, 0.18);
+  border-radius: max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent))) 0 0 max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent)));
+  background: linear-gradient(270deg, rgba(0, 0, 0, 0) 0%, #091125 100%);
 }
 #wrap.travel .sec .con02 .cont03 .project_swiper .swiper-slide:nth-child(1) .bg_img {
   background: url("../../../images/project/project-image12.png") no-repeat center/cover;
@@ -753,4 +821,140 @@
 }
 #wrap.travel .sec .con02 .cont03 .project_swiper .swiper-pagination {
   bottom: 0;
+}
+#wrap.travel .sec .con02 .cont03 .project_swiper .slide_inner {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: normal;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  padding: max(calc(60px * var(--base-ratio)), calc(calc(60 / var(--base-size)) * var(--base-percent))) max(calc(42px * var(--base-ratio)), calc(calc(42 / var(--base-size)) * var(--base-percent))) max(calc(48px * var(--base-ratio)), calc(calc(48 / var(--base-size)) * var(--base-percent)));
+  color: #fff;
+}
+#wrap.travel .sec .con02 .cont03 .project_swiper .project_tit .number {
+  padding: max(calc(4px * var(--base-ratio)), calc(calc(4 / var(--base-size)) * var(--base-percent))) max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent)));
+  border: max(calc(1px * var(--base-ratio)), calc(calc(1 / var(--base-size)) * var(--base-percent))) solid #ffffff;
+  border-radius: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
+  font-size: max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent)));
+  line-height: 1.125;
+  letter-spacing: 0em;
+  color: #ffffff;
+}
+#wrap.travel .sec .con02 .cont03 .project_swiper .project_tit > strong {
+  display: block;
+  padding-top: max(calc(40px * var(--base-ratio)), calc(calc(40 / var(--base-size)) * var(--base-percent)));
+  font-size: max(calc(36px * var(--base-ratio)), calc(calc(36 / var(--base-size)) * var(--base-percent)));
+  line-height: 1.0555555556;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+}
+#wrap.travel .sec .con02 .cont03 .project_swiper .project_tit > p {
+  padding-top: max(calc(26px * var(--base-ratio)), calc(calc(26 / var(--base-size)) * var(--base-percent)));
+  font-size: max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent)));
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  color: #ffffff;
+}
+#wrap.travel .sec .con02 .cont03 .project_swiper .link_txt {
+  display: inline-block;
+  padding: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent))) 0;
+  font-size: max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent)));
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 400;
+  color: #ffffff;
+}
+@media (min-width: 1025px) {
+  #wrap.travel .sec .con02 .cont03 .project_swiper .link_txt:hover .arrow_btn {
+    transform: translateX(max(calc(8px * var(--base-ratio)), calc(calc(8 / var(--base-size)) * var(--base-percent))));
+  }
+}
+#wrap.travel .sec .con02 .cont03 .project_swiper .link_txt .arrow_btn {
+  display: inline-block;
+  width: max(calc(18px * var(--base-ratio)), calc(calc(18 / var(--base-size)) * var(--base-percent)));
+  height: max(calc(18px * var(--base-ratio)), calc(calc(18 / var(--base-size)) * var(--base-percent)));
+  margin-left: max(calc(6px * var(--base-ratio)), calc(calc(6 / var(--base-size)) * var(--base-percent)));
+  transition: transform 0.4s;
+  background: url("../../../images/button/arrow_big_w.svg") no-repeat 0 0/cover;
+}
+#wrap.travel .sec .con02 .cont04 {
+  z-index: 1;
+  position: relative;
+}
+#wrap.travel .sec .con02 .cont04 .icon_balloon {
+  position: absolute;
+  top: max(calc(100px * var(--base-ratio)), calc(calc(100 / var(--base-size)) * var(--base-percent)));
+  right: max(calc(40px * var(--base-ratio)), calc(calc(40 / var(--base-size)) * var(--base-percent)));
+  width: max(calc(350px * var(--base-ratio)), calc(calc(350 / var(--base-size)) * var(--base-percent)));
+  height: max(calc(350px * var(--base-ratio)), calc(calc(350 / var(--base-size)) * var(--base-percent)));
+  opacity: 0.8;
+  background: url("../../../images/travel/air_balloon.png") no-repeat 0 0/cover;
+}
+#wrap.travel .sec .con02 .cont04 .tit_box {
+  text-align: center;
+}
+#wrap.travel .sec .con02 .cont04 .tit_box h3 {
+  position: relative;
+  padding-bottom: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
+  color: #2167c5;
+}
+#wrap.travel .sec .con02 .cont04 .tit_box h3 .shape_icon {
+  display: inline-block;
+  position: absolute;
+  top: -90%;
+  left: 50%;
+  width: max(calc(200px * var(--base-ratio)), calc(calc(200 / var(--base-size)) * var(--base-percent)));
+  height: max(calc(133px * var(--base-ratio)), calc(calc(133 / var(--base-size)) * var(--base-percent)));
+  transform: translateX(100%);
+  background: url("../../../images/travel/plane.png") no-repeat 0 0/cover;
+}
+#wrap.travel .sec .con02 .cont04 .tit_box span {
+  line-height: 1.6;
+  color: #2167c5;
+}
+#wrap.travel .sec .con02 .cont04 .contact_box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: normal;
+  gap: max(calc(40px * var(--base-ratio)), calc(calc(40 / var(--base-size)) * var(--base-percent)));
+  padding-top: max(calc(160px * var(--base-ratio)), calc(calc(160 / var(--base-size)) * var(--base-percent)));
+}
+#wrap.travel .sec .con02 .cont04 .contact_box > a {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
+  width: max(calc(240px * var(--base-ratio)), calc(calc(240 / var(--base-size)) * var(--base-percent)));
+  padding: max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) max(calc(38px * var(--base-ratio)), calc(calc(38 / var(--base-size)) * var(--base-percent)));
+  border-radius: max(calc(99px * var(--base-ratio)), calc(calc(99 / var(--base-size)) * var(--base-percent)));
+  font-size: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
+  font-weight: 700;
+  transition-duration: 0.4s;
+}
+#wrap.travel .sec .con02 .cont04 .contact_box > a:nth-child(1) {
+  color: #ffffff;
+  background-color: #112d75;
+}
+#wrap.travel .sec .con02 .cont04 .contact_box > a:nth-child(2) {
+  color: #112d75;
+  background-color: #ffffff;
+}
+#wrap.travel .sec .con02 .cont04 .contact_box > a > span {
+  display: inline-block;
+}
+#wrap.travel .sec .con02 .cont04 .contact_box > a .github_icon {
+  width: max(calc(32px * var(--base-ratio)), calc(calc(32 / var(--base-size)) * var(--base-percent)));
+  height: max(calc(32px * var(--base-ratio)), calc(calc(32 / var(--base-size)) * var(--base-percent)));
+  background: url("../../../images/travel/github_icon.png") no-repeat 0 0/contain;
+}
+#wrap.travel .sec .con02 .cont04 .contact_box > a .email_icon {
+  width: max(calc(32px * var(--base-ratio)), calc(calc(32 / var(--base-size)) * var(--base-percent)));
+  height: max(calc(32px * var(--base-ratio)), calc(calc(32 / var(--base-size)) * var(--base-percent)));
+  background: url("../../../images/travel/email_icon.png") no-repeat 0 0/contain;
 }

@@ -9,14 +9,25 @@
 	.scroll_box {
 		@include flex($align-items:center);
 		flex-direction: column;
-		gap: to_vw(10);
+		gap: to_vw(70);
 		width: to_vw(30);
 		padding-top: to_vw(120);
 
 		.scroll_txt {
+			position: relative;
 			@include fontSize(16, 0, 20);
 			font-family:$Pretendard;
 			color: $white;
+
+			&::after {
+				content:'';
+				position: absolute;
+				bottom: to_vw(-60);
+				left: 50%;
+				width: to_vw(1);
+				height: to_vw(50);
+				background-color: $white;
+			}
 		}
 		.scroll_arrow {
 			overflow: hidden;
