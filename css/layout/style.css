@@ -188,7 +188,6 @@ body.overflow {
 }
 
 .sticky {
-  position: -webkit-sticky;
   position: sticky;
   top: 0;
   left: 0;
@@ -304,15 +303,15 @@ body.overflow {
   }
 }
 
-.row {
-  position: relative;
-}
 @media (min-width: 1025px) {
   .row {
     display: flex;
     flex-wrap: wrap;
     margin: 0 calc(max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) * 0.5 * -1);
   }
+}
+.row {
+  position: relative;
 }
 
 .grid_guide {
@@ -581,19 +580,7 @@ body.overflow {
   width: max(calc(15px * var(--base-ratio)), calc(calc(15 / var(--base-size)) * var(--base-percent)));
   height: max(calc(19px * var(--base-ratio)), calc(calc(19 / var(--base-size)) * var(--base-percent)));
   background: url("../../images/main/scroll_icon.svg") center/cover no-repeat;
-  -webkit-animation: scrollDown 1.8s ease-in-out infinite;
-          animation: scrollDown 1.8s ease-in-out infinite;
-}
-@-webkit-keyframes scrollDown {
-  0% {
-    transform: translateY(10px);
-  }
-  50% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(10px);
-  }
+  animation: scrollDown 1.8s ease-in-out infinite;
 }
 @keyframes scrollDown {
   0% {
@@ -722,16 +709,7 @@ body.overflow {
 }
 #wrap .swiper-paging .swiper-pagination .swiper-pagination-bullet-active:before {
   width: 100%;
-  -webkit-animation: widthProgress calc(var(--swiper-autoplay) * 1ms);
-          animation: widthProgress calc(var(--swiper-autoplay) * 1ms);
-}
-@-webkit-keyframes widthProgress {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+  animation: widthProgress calc(var(--swiper-autoplay) * 1ms);
 }
 @keyframes widthProgress {
   from {
@@ -765,4 +743,4 @@ body.overflow {
     margin-top: max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent)));
     gap: max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent)));
   }
-}
+}/*# sourceMappingURL=style.css.map */

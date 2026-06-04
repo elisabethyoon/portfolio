@@ -205,38 +205,10 @@
   opacity: 0;
   background-color: rgba(0, 0, 0, 0.6);
   transform: translate(-50%, max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))));
-  -webkit-animation-duration: cubic-bezier(0.25, 0.8, 0.25, 1);
-          animation-duration: cubic-bezier(0.25, 0.8, 0.25, 1);
+  animation-duration: cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 #header .gnb_list.gnbShow {
-  -webkit-animation: gnbAni 0.8s both;
-          animation: gnbAni 0.8s both;
-}
-@-webkit-keyframes gnbAni {
-  0% {
-    opacity: 1;
-    width: max(calc(40px * var(--base-ratio)), calc(calc(40 / var(--base-size)) * var(--base-percent)));
-    height: max(calc(40px * var(--base-ratio)), calc(calc(40 / var(--base-size)) * var(--base-percent)));
-    border-radius: 50%;
-  }
-  25% {
-    width: max(calc(80px * var(--base-ratio)), calc(calc(80 / var(--base-size)) * var(--base-percent)));
-    height: max(calc(80px * var(--base-ratio)), calc(calc(80 / var(--base-size)) * var(--base-percent)));
-  }
-  50% {
-    width: max(calc(60px * var(--base-ratio)), calc(calc(60 / var(--base-size)) * var(--base-percent)));
-    height: max(calc(60px * var(--base-ratio)), calc(calc(60 / var(--base-size)) * var(--base-percent)));
-    border-radius: 50%;
-  }
-  70% {
-    border-radius: max(calc(25px * var(--base-ratio)), calc(calc(25 / var(--base-size)) * var(--base-percent)));
-  }
-  100% {
-    opacity: 1;
-    width: 80%;
-    height: max(calc(60px * var(--base-ratio)), calc(calc(60 / var(--base-size)) * var(--base-percent)));
-    border-radius: max(calc(50px * var(--base-ratio)), calc(calc(50 / var(--base-size)) * var(--base-percent)));
-  }
+  animation: gnbAni 0.8s both;
 }
 @keyframes gnbAni {
   0% {
@@ -327,15 +299,11 @@
     height: 100dvh;
     background: #414141;
     padding: max(calc(90px * var(--base-ratio)), calc(calc(90 / var(--base-size)) * var(--base-percent))) max(calc(40px * var(--base-ratio)), calc(calc(40 / var(--base-size)) * var(--base-percent))) max(calc(40px * var(--base-ratio)), calc(calc(40 / var(--base-size)) * var(--base-percent)));
-    -webkit-clip-path: inset(0 0 100% 0);
-            clip-path: inset(0 0 100% 0);
-    transition: transform 0.5s, -webkit-clip-path 0.5s ease-in-out;
+    clip-path: inset(0 0 100% 0);
     transition: transform 0.5s, clip-path 0.5s ease-in-out;
-    transition: transform 0.5s, clip-path 0.5s ease-in-out, -webkit-clip-path 0.5s ease-in-out;
   }
   #header .gnb_wrap.active {
-    -webkit-clip-path: inset(0 0 0% 0);
-            clip-path: inset(0 0 0% 0);
+    clip-path: inset(0 0 0% 0);
   }
   #header .gnb_list {
     overflow: visible;
@@ -509,7 +477,6 @@
   z-index: 99;
   overflow: hidden;
   position: absolute;
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   top: 50%;
@@ -963,7 +930,6 @@
 }
 #wrap.main .sec04 .achievements_wrap {
   z-index: 1;
-  width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
 }
@@ -1012,19 +978,7 @@
 #wrap.main .sec04 li.dodu_img {
   width: max(calc(210px * var(--base-ratio)), calc(calc(210 / var(--base-size)) * var(--base-percent)));
   margin-right: max(calc(40px * var(--base-ratio)), calc(calc(40 / var(--base-size)) * var(--base-percent)));
-  -webkit-animation: moveY 3s linear infinite;
-          animation: moveY 3s linear infinite;
-}
-@-webkit-keyframes moveY {
-  0% {
-    transform: translateY(50px);
-  }
-  50% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(50px);
-  }
+  animation: moveY 3s linear infinite;
 }
 @keyframes moveY {
   0% {
@@ -1229,4 +1183,4 @@
     padding: max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent)));
     font-size: max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent)));
   }
-}
+}/*# sourceMappingURL=style.css.map */

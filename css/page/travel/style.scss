@@ -320,24 +320,86 @@
                             padding-top: to_vw(180);
                         }
                         &01 {
-                            position: relative;
                             .cloud_box {
-                                .cloud_img01 {
-                                    position: absolute;
-                                    top: 0;
-                                    left: 0;
-                                    width: to_vw(500);
-                                    height: to_vw(274);
-                                    background: url('../../../images/travel/cloud01.png') no-repeat 0 0 / cover;
+                                position: relative;
+
+                                &.active {
+                                    .cloud {
+                                        &:nth-child(even) {
+                                            transform: translateX(-100%) !important;
+                                        }
+                                        &:nth-child(odd) {
+                                            transform: translateX(100%) !important;
+                                        }
+                                    }
                                 }
-                                .cloud_img02 {
+
+                                .cloud {
+                                    z-index: 2;
                                     position: absolute;
-                                    top: 0;
-                                    right: 0;
-                                    width: to_vw(500);
-                                    height: to_vw(274);
-                                    background: url('../../../images/travel/cloud01.png') no-repeat 0 0 / cover;
+                                    max-width: none;
+                                 
+                                    &:nth-child(even) {
+                                        animation: cloudMotionEven 2.5s ease-in-out infinite;
+                                    }
+                                    &:nth-child(odd) {
+                                        animation: cloudMotionOdd 3s ease-in-out infinite;
+                                    }
+                                    @keyframes cloudMotionOdd {
+                                        0% {
+                                            transform: translateX(20px);
+                                        } 50% {
+                                            transform: translateX(0);
+                                        } 100% {
+                                            transform: translateX(20px);
+                                        }
+                                    }
+                                    @keyframes cloudMotionEven {
+                                        0% {
+                                            transform: translateX(0);
+                                        } 50% {
+                                            transform: translateX(10px);
+                                        } 100% {
+                                            transform: translateX(0);
+                                        }
+                                    }
+                                    
+                                    &_01 {
+                                        width: to_vw(1337);
+                                        height: to_vw(606);
+                                        top: to_vw(300);
+                                        left: to_vw(460);
+                                    }
+                                    &_02 {
+                                        top: to_vw(50);
+                                        left: to_vw(-20);
+                                    }
+                                    &_03 {
+                                        width: to_vw(1050);
+                                        height: to_vw(533);
+                                        top: to_vw(100);
+                                        right: to_vw(-120);
+                                    }
+                                    &_04 {
+                                        width: to_vw(1123);
+                                        height: to_vw(491);
+                                        top: to_vw(180);
+                                        left: to_vw(60);
+                                    }
+                                    &_05 {
+                                        width: to_vw(1300);
+                                        height: to_vw(456);
+                                        top: to_vw(-150);
+                                        right: to_vw(-120);
+                                    }
+                                    &_06 {
+                                        width: to_vw(1672);
+                                        height: to_vw(749);
+                                        top: to_vw(-120);
+                                        left: to_vw(-220);
+                                    }
                                 }
+                                
                             }
                             .cont01_box {
                                 @include flex($justify-content: space-between, $align-items:flex-end);
@@ -773,6 +835,17 @@
                                 height: to_vw(350);
                                 opacity: 0.8;
                                 background: url('../../../images/travel/air_balloon.png') no-repeat 0 0 / cover;
+                                animation: upDown 2.4s ease-in-out infinite;
+                            }
+                           
+                            @keyframes upDown {
+                                0% {
+                                    transform: translateY(20px);
+                                } 50% {
+                                    transform: translateY(0);
+                                } 100% {
+                                    transform: translateY(20px);
+                                }
                             }
                             .tit_box {
                                 text-align: center;

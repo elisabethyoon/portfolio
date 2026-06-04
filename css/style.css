@@ -267,15 +267,11 @@
     height: 100dvh;
     background: #414141;
     padding: max(calc(90px * var(--base-ratio)), calc(calc(90 / var(--base-size)) * var(--base-percent))) max(calc(40px * var(--base-ratio)), calc(calc(40 / var(--base-size)) * var(--base-percent))) max(calc(40px * var(--base-ratio)), calc(calc(40 / var(--base-size)) * var(--base-percent)));
-    -webkit-clip-path: inset(0 0 100% 0);
-            clip-path: inset(0 0 100% 0);
-    transition: transform 0.5s, -webkit-clip-path 0.5s ease-in-out;
+    clip-path: inset(0 0 100% 0);
     transition: transform 0.5s, clip-path 0.5s ease-in-out;
-    transition: transform 0.5s, clip-path 0.5s ease-in-out, -webkit-clip-path 0.5s ease-in-out;
   }
   #wrap.travel .gnb_wrap.active {
-    -webkit-clip-path: inset(0 0 0% 0);
-            clip-path: inset(0 0 0% 0);
+    clip-path: inset(0 0 0% 0);
   }
   #wrap.travel .gnb_list {
     overflow: visible;
@@ -432,105 +428,16 @@
 #wrap.travel .sec .con02 .cont + .cont {
   padding-top: max(calc(180px * var(--base-ratio)), calc(calc(180 / var(--base-size)) * var(--base-percent)));
 }
-#wrap.travel .sec .con02 .cont01 .cloud_box {
-  position: relative;
-}
-#wrap.travel .sec .con02 .cont01 .cloud_box.active .cloud:nth-child(even) {
-  transform: translateX(-100%) !important;
-}
-#wrap.travel .sec .con02 .cont01 .cloud_box.active .cloud:nth-child(odd) {
-  transform: translateX(100%) !important;
-}
 #wrap.travel .sec .con02 .cont01 .cloud_box .cloud {
   z-index: 2;
   position: absolute;
+  top: 0;
+  left: 0;
   max-width: none;
-}
-#wrap.travel .sec .con02 .cont01 .cloud_box .cloud:nth-child(even) {
-  -webkit-animation: cloudMotionEven 2.5s ease-in-out infinite;
-          animation: cloudMotionEven 2.5s ease-in-out infinite;
-}
-#wrap.travel .sec .con02 .cont01 .cloud_box .cloud:nth-child(odd) {
-  -webkit-animation: cloudMotionOdd 3s ease-in-out infinite;
-          animation: cloudMotionOdd 3s ease-in-out infinite;
-}
-@-webkit-keyframes cloudMotionOdd {
-  0% {
-    transform: translateX(20px);
-  }
-  50% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(20px);
-  }
-}
-@keyframes cloudMotionOdd {
-  0% {
-    transform: translateX(20px);
-  }
-  50% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(20px);
-  }
-}
-@-webkit-keyframes cloudMotionEven {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(10px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-@keyframes cloudMotionEven {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(10px);
-  }
-  100% {
-    transform: translateX(0);
-  }
+  width: max(calc(400px * var(--base-ratio)), calc(calc(400 / var(--base-size)) * var(--base-percent)));
 }
 #wrap.travel .sec .con02 .cont01 .cloud_box .cloud_01 {
-  width: max(calc(1337px * var(--base-ratio)), calc(calc(1337 / var(--base-size)) * var(--base-percent)));
-  height: max(calc(606px * var(--base-ratio)), calc(calc(606 / var(--base-size)) * var(--base-percent)));
-  top: max(calc(300px * var(--base-ratio)), calc(calc(300 / var(--base-size)) * var(--base-percent)));
-  left: max(calc(460px * var(--base-ratio)), calc(calc(460 / var(--base-size)) * var(--base-percent)));
-}
-#wrap.travel .sec .con02 .cont01 .cloud_box .cloud_02 {
-  top: max(calc(50px * var(--base-ratio)), calc(calc(50 / var(--base-size)) * var(--base-percent)));
-  left: max(calc(calc(calc(20 / var(--base-size)) * var(--base-percent)) * -1));
-}
-#wrap.travel .sec .con02 .cont01 .cloud_box .cloud_03 {
-  width: max(calc(1050px * var(--base-ratio)), calc(calc(1050 / var(--base-size)) * var(--base-percent)));
-  height: max(calc(533px * var(--base-ratio)), calc(calc(533 / var(--base-size)) * var(--base-percent)));
-  top: max(calc(100px * var(--base-ratio)), calc(calc(100 / var(--base-size)) * var(--base-percent)));
-  right: max(calc(calc(calc(120 / var(--base-size)) * var(--base-percent)) * -1));
-}
-#wrap.travel .sec .con02 .cont01 .cloud_box .cloud_04 {
-  width: max(calc(1123px * var(--base-ratio)), calc(calc(1123 / var(--base-size)) * var(--base-percent)));
-  height: max(calc(491px * var(--base-ratio)), calc(calc(491 / var(--base-size)) * var(--base-percent)));
-  top: max(calc(180px * var(--base-ratio)), calc(calc(180 / var(--base-size)) * var(--base-percent)));
-  left: max(calc(60px * var(--base-ratio)), calc(calc(60 / var(--base-size)) * var(--base-percent)));
-}
-#wrap.travel .sec .con02 .cont01 .cloud_box .cloud_05 {
-  width: max(calc(1300px * var(--base-ratio)), calc(calc(1300 / var(--base-size)) * var(--base-percent)));
-  height: max(calc(456px * var(--base-ratio)), calc(calc(456 / var(--base-size)) * var(--base-percent)));
-  top: max(calc(calc(calc(150 / var(--base-size)) * var(--base-percent)) * -1));
-  right: max(calc(calc(calc(120 / var(--base-size)) * var(--base-percent)) * -1));
-}
-#wrap.travel .sec .con02 .cont01 .cloud_box .cloud_06 {
-  width: max(calc(1672px * var(--base-ratio)), calc(calc(1672 / var(--base-size)) * var(--base-percent)));
-  height: max(calc(749px * var(--base-ratio)), calc(calc(749 / var(--base-size)) * var(--base-percent)));
-  top: max(calc(calc(calc(120 / var(--base-size)) * var(--base-percent)) * -1));
-  left: max(calc(calc(calc(220 / var(--base-size)) * var(--base-percent)) * -1));
+  width: max(calc(400px * var(--base-ratio)), calc(calc(400 / var(--base-size)) * var(--base-percent)));
 }
 #wrap.travel .sec .con02 .cont01 .cont01_box {
   display: flex;
@@ -974,30 +881,6 @@
   height: max(calc(350px * var(--base-ratio)), calc(calc(350 / var(--base-size)) * var(--base-percent)));
   opacity: 0.8;
   background: url("../../../images/travel/air_balloon.png") no-repeat 0 0/cover;
-  -webkit-animation: upDown 2.4s ease-in-out infinite;
-          animation: upDown 2.4s ease-in-out infinite;
-}
-@-webkit-keyframes upDown {
-  0% {
-    transform: translateY(20px);
-  }
-  50% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(20px);
-  }
-}
-@keyframes upDown {
-  0% {
-    transform: translateY(20px);
-  }
-  50% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(20px);
-  }
 }
 #wrap.travel .sec .con02 .cont04 .tit_box {
   text-align: center;

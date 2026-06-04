@@ -476,6 +476,14 @@ main.utils = {
 		})
 	},
     /**
+	 * main.utils.cont01 : cont01 cloud motion
+	 **/
+	cont01: function(){
+		let tl = gsap.timeline();
+
+		
+	},
+    /**
 	 * main.utils.cont03 : cont03 motion
 	 **/
 	cont03: function(){

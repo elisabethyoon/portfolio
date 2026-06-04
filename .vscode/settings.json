@@ -1,0 +1,4 @@
+{
+  "dartsass.disableSourceMap": true,
+  "dartsass.outputFormat": "minified cssonly"
+}
