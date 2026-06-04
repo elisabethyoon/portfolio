@@ -188,6 +188,7 @@ body.overflow {
 }
 
 .sticky {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   left: 0;
@@ -303,15 +304,15 @@ body.overflow {
   }
 }
 
+.row {
+  position: relative;
+}
 @media (min-width: 1025px) {
   .row {
     display: flex;
     flex-wrap: wrap;
     margin: 0 calc(max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) * 0.5 * -1);
   }
-}
-.row {
-  position: relative;
 }
 
 .grid_guide {
@@ -580,7 +581,19 @@ body.overflow {
   width: max(calc(15px * var(--base-ratio)), calc(calc(15 / var(--base-size)) * var(--base-percent)));
   height: max(calc(19px * var(--base-ratio)), calc(calc(19 / var(--base-size)) * var(--base-percent)));
   background: url("../../images/main/scroll_icon.svg") center/cover no-repeat;
-  animation: scrollDown 1.8s ease-in-out infinite;
+  -webkit-animation: scrollDown 1.8s ease-in-out infinite;
+          animation: scrollDown 1.8s ease-in-out infinite;
+}
+@-webkit-keyframes scrollDown {
+  0% {
+    transform: translateY(10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(10px);
+  }
 }
 @keyframes scrollDown {
   0% {
@@ -595,13 +608,17 @@ body.overflow {
 }
 @media (max-width: 1024px) {
   #wrap .scroll_box {
-    gap: max(calc(6px * var(--base-ratio)), calc(calc(6 / var(--base-size)) * var(--base-percent)));
-    bottom: max(calc(50px * var(--base-ratio)), calc(calc(50 / var(--base-size)) * var(--base-percent)));
+    gap: max(calc(48px * var(--base-ratio)), calc(calc(48 / var(--base-size)) * var(--base-percent)));
+    bottom: max(calc(calc(calc(50 / var(--base-size)) * var(--base-percent)) * -1));
   }
   #wrap .scroll_box .scroll_txt {
-    font-size: max(calc(11px * var(--base-ratio)), calc(calc(11 / var(--base-size)) * var(--base-percent)));
-    line-height: 1.2727272727;
+    font-size: max(calc(13px * var(--base-ratio)), calc(calc(13 / var(--base-size)) * var(--base-percent)));
+    line-height: 1.2307692308;
     letter-spacing: 0em;
+  }
+  #wrap .scroll_box .scroll_txt::after {
+    bottom: max(calc(calc(calc(40 / var(--base-size)) * var(--base-percent)) * -1));
+    height: max(calc(30px * var(--base-ratio)), calc(calc(30 / var(--base-size)) * var(--base-percent)));
   }
   #wrap .scroll_box .scroll_arrow {
     width: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
@@ -709,7 +726,16 @@ body.overflow {
 }
 #wrap .swiper-paging .swiper-pagination .swiper-pagination-bullet-active:before {
   width: 100%;
-  animation: widthProgress calc(var(--swiper-autoplay) * 1ms);
+  -webkit-animation: widthProgress calc(var(--swiper-autoplay) * 1ms);
+          animation: widthProgress calc(var(--swiper-autoplay) * 1ms);
+}
+@-webkit-keyframes widthProgress {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 @keyframes widthProgress {
   from {
@@ -743,4 +769,4 @@ body.overflow {
     margin-top: max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent)));
     gap: max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent)));
   }
-}/*# sourceMappingURL=style.css.map */
+}

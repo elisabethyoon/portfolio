@@ -85,137 +85,65 @@ main.utils = {
 	 **/
 	introMotion: function() {
         let tl = gsap.timeline({});
-		const introFlag = sessionStorage.getItem('introMotionPlayed');
+		// const introFlag = sessionStorage.getItem('introMotionPlayed');
 
-		if (introFlag === 'Y') {
-			$('.loading_box').addClass('hide').hide();
+		// if (introFlag === 'Y') {
+		// 	$('.loading_box').addClass('hide').hide();
 
-			// 뒤로가기 했을 때 로딩 관련 상태 확실히 제거
-			$('body').removeClass('scroll-disable');
+		// 	// 뒤로가기 했을 때 로딩 관련 상태 확실히 제거
+		// 	$('body').removeClass('scroll-disable');
 
-			// GNB는 바로 보이게
-			if(mediaQuery.matches) { // pc
-				tl
-				.add(() => {
-					$('.gnb_list').addClass('gnbShow');
-				}, '+=0.5')
-				.to('.gnb_list li', {
-					y: 0,
-					opacity: 1,
-					duration: 0.6,
-					ease: 'Power1.easeOut',
-					delay: 0.8
-				})
-				.add(() => {
-					$('.kv_tit').addClass('active');
-				})
-			} else { // m
-				tl
-				.add(() => {
-					$('.gnb_list').addClass('gnbShow');
-				})
-				.to('.gnb_list li', {
-					y: 0,
-					opacity: 1,
-					duration: 0.6,
-					ease: 'Power1.easeOut',
-					delay: 0.8
-				}, '<')
-				.add(() => {
-					$('.kv_tit').addClass('active');
-				}, '-=1')
-			}
+		// 	// GNB는 바로 보이게
+		// 	if(mediaQuery.matches) { // pc
+		// 		tl
+		// 		.add(() => {
+		// 			$('.gnb_list').addClass('gnbShow');
+		// 		}, '+=0.5')
+		// 		.to('.gnb_list li', {
+		// 			y: 0,
+		// 			opacity: 1,
+		// 			duration: 0.6,
+		// 			ease: 'Power1.easeOut',
+		// 			delay: 0.8
+		// 		})
+		// 		.add(() => {
+		// 			$('.kv_tit').addClass('active');
+		// 		})
+		// 	} else { // m
+		// 		tl
+		// 		.add(() => {
+		// 			$('.gnb_list').addClass('gnbShow');
+		// 		})
+		// 		.to('.gnb_list li', {
+		// 			y: 0,
+		// 			opacity: 1,
+		// 			duration: 0.6,
+		// 			ease: 'Power1.easeOut',
+		// 			delay: 0.8
+		// 		}, '<')
+		// 		.add(() => {
+		// 			$('.kv_tit').addClass('active');
+		// 		}, '-=1')
+		// 	}
 
-			return;
-		}
+		// 	return;
+		// }
 
-		sessionStorage.setItem('introMotionPlayed', 'Y');
+		// sessionStorage.setItem('introMotionPlayed', 'Y');
 		
-		$body.addClass('scroll-disable');
+		// $body.addClass('scroll-disable');
 		
+
         // main visual timeline animation
 		if(mediaQuery.matches) { // pc
 			tl
 			.to({}, { duration: 0.35 })
-			.add(() => {
-				$('.loading_box .sub_title').addClass('fill');
-			})
-			.to('.loading_box .sub_title', {
-				opacity: 0,
-				duration: 0.3,
-				delay: 1.6
-			})
-			.to('.loading_line', {
-				yPercent: 200,
-				delay: 0.1
-			})
-			.add(() => {
-				$('.loading_box').addClass('dimShow');
-			}, '+=0.7')
-			.add(() => {
-				$('.gnb_list').addClass('gnbShow');
-			}, '+=0.5')
-			.to('.gnb_list li', {
-				y: 0,
-				opacity: 1,
-				duration: 0.6,
-				ease: 'Power1.easeOut',
-				delay: 0.8
-			})
-			.add(() => {
-				$('.loading_box').addClass('hide');
-			}, '+=0.2')
-			.to('.loading_box', {
-				display: 'none',
-				delay: -2,
-				onComplete: function() {
-					$('body').removeClass('scroll-disable');
-				}
-			})
-			.add(() => {
-				$('.kv_tit').addClass('active');
-			})
+			
+			
 		} else { // m
 			tl
 			.to({}, { duration: 0.35 })
-			.add(() => {
-				$('.loading_box .sub_title').addClass('fill');
-			})
-			.to('.loading_box .sub_title', {
-				opacity: 0,
-				duration: 0.3,
-				delay: 1.6
-			})
-			.to('.loading_line', {
-				yPercent: 200,
-				delay: 0.1
-			})
-			.add(() => {
-				$('.loading_box').addClass('dimShow');
-			}, '+=0.7')
-			.add(() => {
-				$('.gnb_list').addClass('gnbShow');
-			}, '+=0.5')
-			.to('.gnb_list li', {
-				y: 0,
-				opacity: 1,
-				duration: 0.6,
-				ease: 'Power1.easeOut',
-				delay: 0.8
-			}, '<')
-			.add(() => {
-				$('.loading_box').addClass('hide');
-			}, '+=0.1')
-			.to('.loading_box', {
-				display: 'none',
-				delay: -2,
-				onComplete: function() {
-					$('body').removeClass('scroll-disable');
-				}
-			})
-			.add(() => {
-				$('.kv_tit').addClass('active');
-			}, '-=1')
+			
 		}
 	},
 	/**
@@ -281,7 +209,7 @@ main.utils = {
 		// gnb 클릭 시 해당 섹션 도달
 		$(document).on('click','.gnb_list li', function() {
 			let idx = $(this).index();
-			let moveScrollTop = $('.sec').eq(idx).offset().top + 2;
+			let moveScrollTop = $('.con').eq(idx).offset().top + 2;
 			
 			gsap.to($(window),{
 				scrollTo: moveScrollTop,
@@ -291,17 +219,10 @@ main.utils = {
 			
 			$('.mobile_menu_btn').trigger('click');
 		});
-		$(document).on('click','.kv_tit .link_project', function() {
-			let moveScrollSec = $('#project').offset().top + 2;
-
-			gsap.to($(window),{
-				scrollTo: moveScrollSec,
-				duration: 0.6,
-			});
-		});
+		
 
 		// 각 섹션 도달 시 gnb 활성화
-		$('.sec').each(function(idx, el) {
+		$('.con').each(function(idx, el) {
 			ScrollTrigger.create({
 				trigger: el,
 				start: 'top top+=2',
@@ -344,144 +265,24 @@ main.utils = {
             }
         }
     },
-	/**
-	 * main.utils.titleEffect : title fill motion
-	 **/
-	titleEffect: function() {
-		const title = $('#container .title_effect');
-        title.each(function(el, item) {
-            let titEffect = gsap.timeline({
-                scrollTrigger: {
-                    id: 'tit',
-                    trigger: $(item).closest('.sec'),
-                    start: 'top 80%',
-                    // markers: true,
-                }
-            })
-            .to($(item), {
-                duration: 1,
-                onStart: function() {
-                    $(item).addClass('fill')
-                }
-            })
-        })
-	},
-	/**
-	 * main.utils.sec02 : sec02 motion
-	 **/
-	sec02: function() {
-		let $sec02 = $('.sec02');
-		let imgMask = $sec02.find('.mask');
-		let imgProfile = $sec02.find('.profile_img');
-
-		let tl = gsap.timeline({
-			scrollTrigger: {
-				trigger: '.sec02',
-				start: 'top 50%',
-				end: 'center 70%',
-				// markers: true,
-			}
-		});
-		tl.to($sec02.find('.txt_box'), { 
-			y: 0,
-			opacity: 1,
-			duration: 0.6
-		}, 0.5);
-		tl.to(imgMask, {
-			scaleX: 0,
-			duration: 1.5,
-		}, 0.4);
-		tl.from(imgProfile, {
-			scale: 1.3,
-			duration: 1.5
-		}, '<');
-	},
-	/**
-	 * main.utils.sec03 : sec03 motion
-	 **/
-	sec03: function(){
-		let $sec03 = $('.sec03');
-
-		let tl = gsap.timeline({
-            scrollTrigger: {
-                id: 'career',
-                trigger: '.sec03',
-                start: 'top 30%',
-                // markers: true,
-                onEnter: function() {
-                    $sec03.find('.career_wrap').addClass('active');
-                }
-            }
-        })
-	},
-	/**
-	 * main.utils.sec04 : sec04 motion
-	 **/
-	sec04: function(){
-		var slideW, slideContW, scrollMove;
-		const $sec04 = $('.sec04');
-		
-		function isMobile() {
-			return window.innerWidth <= 1024;
-		}
-		function cardMoveMotion() {
-			slideW = $sec04.find('.achievements_list').outerWidth(true);
-			slideContW = $sec04.find('.cont_wrap').width();
-			moveLeft = slideW - slideContW;
-
-			ScrollTrigger.getAll().forEach(function(st){
-				if(st.vars.id == 'cardMove'){
-					st.kill()
-				}
-			});
-
-			scrollMove && scrollMove.kill();
-			scrollMove = '';
-
-			gsap.set([$sec04.find('*')],{clearProps:"all"});
-
-			scrollMove = gsap.timeline({
-				scrollTrigger:{
-					id:'cardMove',
-					trigger:$sec04,
-					start: function() {
-						return isMobile() ? 'top 20%' : 'top top'
-					},
-					// end: '+=4500',
-					end: function() {
-						return isMobile() ? '+=3000' : '+=4500'
-					},
-					scrub: 1.2,
-					invalidateOnRefresh: true,
-					// markers: true,
-				},
-			})
-			.to($sec04.find('.timeline_hidden'),{
-				duration:.12,
-			})
-			.to($sec04.find('.achievements_wrap'),{
-				ease: "none",
-				x:-moveLeft,
-				duration: 1
-			})
-			.to($sec04.find('.timeline_hidden'),{
-				duration:.3,
-			})
-			ScrollTrigger.refresh();
-            ScrollTrigger.update();
-		}
-
-		$(window).on('load resize', function(){
-			cardMoveMotion();
-		})
-	},
     /**
 	 * main.utils.cont01 : cont01 cloud motion
 	 **/
 	cont01: function(){
 		let tl = gsap.timeline();
 
-		
+		gsap.to('.cloud_box',{
+			scrollTrigger:{
+				trigger: '.con02',
+				start:"top 45%",
+				once: true,
+				invalidateOnRefresh: true,
+				// markers: true,
+				onEnter:function(){
+					$('.cloud_box').addClass('active');
+				},
+			}
+		})
 	},
     /**
 	 * main.utils.cont03 : cont03 motion
@@ -529,10 +330,11 @@ main.utils = {
 		main.utils.scroll();
 		main.utils.introMotion();
 		main.utils.header();
-		main.utils.titleEffect();
+		// main.utils.titleEffect();
 		// main.utils.sec02();
 		// main.utils.sec03();
 		// main.utils.sec04();
+		main.utils.cont01();
 		main.utils.cont03();
 	}
 }

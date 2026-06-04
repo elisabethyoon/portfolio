@@ -48,11 +48,16 @@
 		}
 
 		@include media(false, tablet){
-			gap: to_vw(6);
-			bottom: to_vw(50);
+			gap: to_vw(48);
+			bottom: to_vw(-50);
 
 			.scroll_txt {
-				@include fontSize(11, 0, 14);
+				@include fontSize(13, 0, 16);
+
+				&::after {
+					bottom: to_vw(-40);
+					height: to_vw(30);
+				}
 			}
 			.scroll_arrow {
 				width: to_vw(12);

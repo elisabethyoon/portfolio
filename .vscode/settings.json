@@ -1,4 +1,5 @@
 {
   "dartsass.disableSourceMap": true,
-  "dartsass.outputFormat": "minified cssonly"
+  "dartsass.outputFormat": "minified cssonly",
+  "liveServer.settings.port": 5501
 }
