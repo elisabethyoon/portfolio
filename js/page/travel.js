@@ -81,72 +81,6 @@ main.utils = {
 		mediaQuery.addEventListener("change", breakPoint);
 	},
 	/**
-	 * main.utils.introMotion : 진입 모션
-	 **/
-	introMotion: function() {
-        let tl = gsap.timeline({});
-		// const introFlag = sessionStorage.getItem('introMotionPlayed');
-
-		// if (introFlag === 'Y') {
-		// 	$('.loading_box').addClass('hide').hide();
-
-		// 	// 뒤로가기 했을 때 로딩 관련 상태 확실히 제거
-		// 	$('body').removeClass('scroll-disable');
-
-		// 	// GNB는 바로 보이게
-		// 	if(mediaQuery.matches) { // pc
-		// 		tl
-		// 		.add(() => {
-		// 			$('.gnb_list').addClass('gnbShow');
-		// 		}, '+=0.5')
-		// 		.to('.gnb_list li', {
-		// 			y: 0,
-		// 			opacity: 1,
-		// 			duration: 0.6,
-		// 			ease: 'Power1.easeOut',
-		// 			delay: 0.8
-		// 		})
-		// 		.add(() => {
-		// 			$('.kv_tit').addClass('active');
-		// 		})
-		// 	} else { // m
-		// 		tl
-		// 		.add(() => {
-		// 			$('.gnb_list').addClass('gnbShow');
-		// 		})
-		// 		.to('.gnb_list li', {
-		// 			y: 0,
-		// 			opacity: 1,
-		// 			duration: 0.6,
-		// 			ease: 'Power1.easeOut',
-		// 			delay: 0.8
-		// 		}, '<')
-		// 		.add(() => {
-		// 			$('.kv_tit').addClass('active');
-		// 		}, '-=1')
-		// 	}
-
-		// 	return;
-		// }
-
-		// sessionStorage.setItem('introMotionPlayed', 'Y');
-		
-		// $body.addClass('scroll-disable');
-		
-
-        // main visual timeline animation
-		if(mediaQuery.matches) { // pc
-			tl
-			.to({}, { duration: 0.35 })
-			
-			
-		} else { // m
-			tl
-			.to({}, { duration: 0.35 })
-			
-		}
-	},
-	/**
 	 * main.utils.header : header
 	 **/
 	header: function() {
@@ -160,7 +94,6 @@ main.utils = {
 				pcEvent = setTimeout(function() {
 					if(webFlag){
 						// clear
-						$wrap.removeClass("gnb_open");
 						$gnbWrap.removeClass("active");
 						$mobileMenuBtn.removeClass("active").off("click");
 					
@@ -173,7 +106,6 @@ main.utils = {
 				mEvent = setTimeout(function() {
 					if(mobileFlag){
 						// clear
-						$wrap.removeClass("gnb_open all_menu_open");
 						$gnbWrap.removeClass("active").removeAttr('style');
 						$gnbWrap.off("mouseleave");
 						
@@ -186,11 +118,9 @@ main.utils = {
 								main.utils.isMoveStop(false, true);
 								setTimeout(function(){
 									_this.removeClass("active");
-									$wrap.removeClass("gnb_open");
 								},300);
 							} else{
 								_this.addClass("active");
-								$wrap.addClass("gnb_open");
 								main.utils.isMoveStop(true, true);
 								setTimeout(function(){
 									$gnbWrap.addClass("active");
@@ -266,15 +196,21 @@ main.utils = {
         }
     },
     /**
-	 * main.utils.cont01 : cont01 cloud motion
+	 * main.utils.con02 : con02 cloud motion
 	 **/
-	cont01: function(){
+	con02: function(){
 		let tl = gsap.timeline();
+
+		function isMobile() {
+			return window.innerWidth <= 1024;
+		}
 
 		gsap.to('.cloud_box',{
 			scrollTrigger:{
 				trigger: '.con02',
-				start:"top 45%",
+				start: function() {
+					return isMobile() ? "top 30%" : "top 45%"
+				},
 				once: true,
 				invalidateOnRefresh: true,
 				// markers: true,
@@ -284,29 +220,52 @@ main.utils = {
 			}
 		})
 	},
-    /**
-	 * main.utils.cont03 : cont03 motion
+	 /**
+	 * main.utils.con04 : con04 slide
 	 **/
-	cont03: function(){
-        var swiper = new Swiper(".project_swiper", {
-            slidesPerView: 2,
+	con04: function(){
+		var swiper = new Swiper(".project_swiper", {
+            slidesPerView: 1.2,
 			spaceBetween: 20,
 			centeredSlides: false,
-			scrollbar: {
-				el: ".swiper-scrollbar",
-				hide: false,
-				draggable: true,
-				snapOnRelease: false,
+			pagination: {
+				el: ".swiper-pagination",
+				clickable: true,
+			  },
+			breakpoints: {
+				1024: {
+					slidesPerView: 2,
+				}
 			},
+			on: {
+				init: function () {
+					var savedIndex = sessionStorage.getItem("projectSwiperIndex");
+		
+					if (savedIndex !== null) {
+						this.slideTo(Number(savedIndex), 0);
+					}
+				},
+				slideChange: function () {
+					sessionStorage.setItem("projectSwiperIndex", this.activeIndex);
+				}
+			}
         });
 
+		$(".project_swiper .link_txt").on("click", function () {
+			sessionStorage.setItem("projectSwiperIndex", swiper.activeIndex);
+		});
+	},
+	/**
+	 * main.utils.con05 : con05 video
+	 **/
+	con05: function(){
 		var $videoWrap = $('.video_wrap');
 
 		gsap.to($videoWrap,{
 			scrollTrigger:{
 				id:"video",
-				trigger: '.cont04',
-				start:"top 70%",
+				trigger: '.con05',
+				start:"top 60%",
 				scrub: true,
 				invalidateOnRefresh: true,
 				// markers: true,
@@ -326,16 +285,35 @@ main.utils = {
 			}
 		})
     },
+	/**
+     * main.utils.dataMotion - 모션 추가 data
+     */
+    dataMotion: function () {
+        if ($("[data-motion]").length > 0) {
+            $('[data-motion]').each((idx, item) => {
+                ScrollTrigger.create({
+                    id: 'dataMotion_' + idx,
+                    trigger: $(item),
+                    scrub: 0.5,
+					start: "top 75%",
+					end: "bottom 75%",
+                    // markers:true,
+                    invalidateOnRefresh: true,
+                    onEnter: function(){
+						$(item).addClass('active');
+					},
+                    // onLeaveBack:() => $(item).removeClass('active'),
+                })
+            });
+        }
+    },
 	init: function(){
 		main.utils.scroll();
-		main.utils.introMotion();
 		main.utils.header();
-		// main.utils.titleEffect();
-		// main.utils.sec02();
-		// main.utils.sec03();
-		// main.utils.sec04();
-		main.utils.cont01();
-		main.utils.cont03();
+		main.utils.con02();
+		main.utils.con04();
+		main.utils.con05();
+		main.utils.dataMotion();
 	}
 }
 

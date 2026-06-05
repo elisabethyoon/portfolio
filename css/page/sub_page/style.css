@@ -195,6 +195,7 @@
   box-shadow: 3px 2px 15px 2px #666;
 }
 #wrap.sub_page .content_wrap .con02 {
+  position: -webkit-sticky;
   position: sticky;
   top: 0;
   left: 0;
@@ -372,4 +373,4 @@
     line-height: 1.25;
     letter-spacing: -0.02em;
   }
-}/*# sourceMappingURL=style.css.map */
+}
