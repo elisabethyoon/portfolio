@@ -1534,7 +1534,7 @@ body {
                                 }
                                 > p {
                                     padding-top: to_vw(10);
-                                    @include fontSize(14, -20, 16);
+                                    @include fontSize(14, -20, 20);
                                 }
                             }
                             .link_txt {

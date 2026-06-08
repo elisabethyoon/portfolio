@@ -1657,7 +1657,7 @@ body.scroll-disable {
   #wrap.travel .sec .con04 .project_swiper .project_tit > p {
     padding-top: max(calc(10px * var(--base-ratio)), calc(calc(10 / var(--base-size)) * var(--base-percent)));
     font-size: max(calc(14px * var(--base-ratio)), calc(calc(14 / var(--base-size)) * var(--base-percent)));
-    line-height: 1.1428571429;
+    line-height: 1.4285714286;
     letter-spacing: -0.02em;
   }
   #wrap.travel .sec .con04 .project_swiper .link_txt {
