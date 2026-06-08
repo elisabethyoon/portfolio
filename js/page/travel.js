@@ -206,7 +206,7 @@ main.utils = {
 			$('.loading_box').addClass('hide').hide();
 
 			// 뒤로가기 했을 때 로딩 관련 상태 확실히 제거
-			$('body').removeClass('scroll-disable');
+			main.utils.isMoveStop(false, true);
 
 			// GNB는 바로 보이게
 			if(mediaQuery.matches) { // pc
@@ -227,7 +227,7 @@ main.utils = {
 
 		sessionStorage.setItem('introMotionPlayed', 'Y');
 		
-		// $body.addClass('scroll-disable');
+		main.utils.isMoveStop(true, true);
 		
         // main visual timeline animation
 		gsap.set(".stamp_img", {
@@ -275,7 +275,7 @@ main.utils = {
 				delay: 0.4,
 				onComplete: function () {
 					$(".loading_box").hide();
-					// $("body").removeClass("scroll-disable");
+					main.utils.isMoveStop(false, true);
 					$(".con01").addClass("active");
 				}
 			});
@@ -318,7 +318,7 @@ main.utils = {
 				delay: 0.4,
 				onComplete: function () {
 					$(".loading_box").hide();
-					// $("body").removeClass("scroll-disable");
+					main.utils.isMoveStop(false, true);
 					$(".con01").addClass("active");
 				}
 			});

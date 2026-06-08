@@ -145,8 +145,16 @@
     position: relative;
   }
 }
-body.scroll-disable {
-  overflow: hidden;
+html,
+body {
+  overflow-anchor: none;
+}
+html.overflow,
+body.overflow {
+  height: 100%;
+  min-height: 100%;
+  overflow: hidden !important;
+  touch-action: none;
 }
 
 /* cloud */

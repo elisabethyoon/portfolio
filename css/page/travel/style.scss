@@ -2,9 +2,16 @@
 @import "../../base/variable";
 @import "../../base/mixin";
 
+html,
 body {
-    &.scroll-disable {
-      overflow: hidden;
+	overflow-anchor: none;
+	
+    &.overflow {
+        height: 100%;
+        min-height: 100%;
+        overflow: hidden !important;
+        -ms-touch-action: none;
+        touch-action: none;
     }
 }
 /* cloud */
