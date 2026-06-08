@@ -195,6 +195,137 @@ main.utils = {
             }
         }
     },
+	/**
+	 * main.utils.introMotion : 진입 모션
+	 **/
+	introMotion: function() {
+        let tl = gsap.timeline({});
+		const introFlag = sessionStorage.getItem('introMotionPlayed');
+
+		if (introFlag === 'Y') {
+			$('.loading_box').addClass('hide').hide();
+
+			// 뒤로가기 했을 때 로딩 관련 상태 확실히 제거
+			$('body').removeClass('scroll-disable');
+
+			// GNB는 바로 보이게
+			if(mediaQuery.matches) { // pc
+				tl
+				.add(() => {
+					$(".con01").addClass("active");
+				})
+				
+			} else { // m
+				tl
+				.add(() => {
+					$(".con01").addClass("active");
+				})
+			}
+
+			return;
+		}
+
+		sessionStorage.setItem('introMotionPlayed', 'Y');
+		
+		// $body.addClass('scroll-disable');
+		
+        // main visual timeline animation
+		gsap.set(".stamp_img", {
+			autoAlpha: 0,
+			scale: 1.35,
+			rotate: -14
+		});
+
+		if(mediaQuery.matches) { // pc
+			tl
+			.to({}, { duration: 0.2 })
+			.to(".plane_box", {
+				yPercent: -200,
+				duration: 1.8,
+				ease: "power3.inOut"
+			})
+			.to({}, { duration: 0.4 })
+			.fromTo(".stamp_img", {
+				autoAlpha: 0,
+				scale: 1.35,
+				rotate: -14
+			}, {
+				autoAlpha: 0.75,
+				scale: 1,
+				rotate: -14,
+				duration: 0.8,
+				ease: "back.out(2)"
+			}, "+=0.4")
+			// .to({}, { duration: 0.1 })
+			.to(".sunset_bg", {
+				opacity: 1,
+				duration: 1.1
+			})
+			.to('.loading_tit', {
+				opacity: 0,
+				y: -30,
+				duration: 0.5
+			}, "-=0.3")
+			.add(() => {
+				$(".loading_box").addClass("hide_motion");
+			}, "-=0.1")
+			.to(".loading_box", {
+				opacity: 0,
+				duration: 0.8,
+				delay: 0.4,
+				onComplete: function () {
+					$(".loading_box").hide();
+					// $("body").removeClass("scroll-disable");
+					$(".con01").addClass("active");
+				}
+			});
+		} else { // m
+			tl
+			.to({}, { duration: 0.2 })
+			.to(".plane_box", {
+				yPercent: -200,
+				duration: 1.8,
+				ease: "power3.inOut"
+			})
+			.to({}, { duration: 0.4 })
+			.fromTo(".stamp_img", {
+				autoAlpha: 0,
+				scale: 1.35,
+				rotate: -14
+			}, {
+				autoAlpha: 0.75,
+				scale: 1,
+				rotate: -14,
+				duration: 0.8,
+				ease: "back.out(2)"
+			}, "+=0.4")
+			// .to({}, { duration: 0.1 })
+			.to(".sunset_bg", {
+				opacity: 1,
+				duration: 1.1
+			})
+			.to('.loading_tit', {
+				opacity: 0,
+				y: -30,
+				duration: 0.5
+			}, "-=0.3")
+			.add(() => {
+				$(".loading_box").addClass("hide_motion");
+			}, "-=0.1")
+			.to(".loading_box", {
+				opacity: 0,
+				duration: 0.8,
+				delay: 0.4,
+				onComplete: function () {
+					$(".loading_box").hide();
+					// $("body").removeClass("scroll-disable");
+					$(".con01").addClass("active");
+				}
+			});
+		}
+
+		
+	},
     /**
 	 * main.utils.con02 : con02 cloud motion
 	 **/
@@ -310,6 +441,7 @@ main.utils = {
 	init: function(){
 		main.utils.scroll();
 		main.utils.header();
+		main.utils.introMotion();
 		main.utils.con02();
 		main.utils.con04();
 		main.utils.con05();
