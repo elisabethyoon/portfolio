@@ -826,7 +826,7 @@ body.scroll-disable {
 }
 #wrap.travel .sec .con02 .img_box {
   position: relative;
-  width: calc(40% - max(calc(48px * var(--base-ratio)), calc(calc(48 / var(--base-size)) * var(--base-percent))));
+  width: calc(30% - max(calc(48px * var(--base-ratio)), calc(calc(48 / var(--base-size)) * var(--base-percent))));
   box-shadow: max(calc(calc(calc(3 / var(--base-size)) * var(--base-percent)) * -1)) max(calc(calc(calc(3 / var(--base-size)) * var(--base-percent)) * -1)) max(calc(120px * var(--base-ratio)), calc(calc(120 / var(--base-size)) * var(--base-percent))) 0 rgba(68, 68, 68, 0.7);
   transform: rotate(4deg);
 }
@@ -984,7 +984,7 @@ body.scroll-disable {
     z-index: -1;
     top: max(calc(calc(calc(40 / var(--base-size)) * var(--base-percent)) * -1));
     right: max(calc(calc(calc(20 / var(--base-size)) * var(--base-percent)) * -1));
-    width: 50%;
+    width: 35%;
   }
   #wrap.travel .sec .con02 .img_box .sticker_icon {
     top: max(calc(calc(calc(20 / var(--base-size)) * var(--base-percent)) * -1));
@@ -1001,7 +1001,7 @@ body.scroll-disable {
 }
 @media (max-width: 500px) {
   #wrap.travel .sec .con02 .img_box {
-    width: 60%;
+    width: 50%;
   }
 }
 #wrap.travel .sec .con03[data-motion] .list_box {
@@ -1946,7 +1946,7 @@ body.scroll-disable {
 }
 .loading_box .loading_tit .stamp_img {
   position: absolute;
-  right: max(calc(calc(calc(140 / var(--base-size)) * var(--base-percent)) * -1));
+  left: 60%;
   bottom: max(calc(calc(calc(100 / var(--base-size)) * var(--base-percent)) * -1));
   width: max(calc(180px * var(--base-ratio)), calc(calc(180 / var(--base-size)) * var(--base-percent)));
   height: max(calc(180px * var(--base-ratio)), calc(calc(180 / var(--base-size)) * var(--base-percent)));

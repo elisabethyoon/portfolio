@@ -707,7 +707,7 @@ body {
                     }                   
                     .img_box {
                         position: relative;
-                        width: calc(40% - to_vw(48));
+                        width: calc(30% - to_vw(48));
                         box-shadow: to_vw(-3) to_vw(-3) to_vw(120) 0 rgba(68, 68, 68, 0.7);
                         transform: rotate(4deg);
 
@@ -870,7 +870,7 @@ body {
                             z-index: -1;
                             top: to_vw(-40);
                             right: to_vw(-20);
-                            width: 50%;
+                            width: 35%;
 
                             .sticker_icon {
                                 top: to_vw(-20);
@@ -888,7 +888,7 @@ body {
                     }
                     @include media(false, sm){
                         .img_box {
-                            width: 60%;
+                            width: 50%;
                         }
                     }
                 }
@@ -1838,7 +1838,7 @@ body {
         }
         .stamp_img {
             position: absolute;
-            right: to_vw(-140);
+            left: 60%;
             bottom: to_vw(-100);
             width: to_vw(180);
             height: to_vw(180);
