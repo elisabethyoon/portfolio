@@ -2224,7 +2224,7 @@ body.overflow {
 }
 .popup_wrap .content_wrap .con02 .link_btn {
   display: block;
-  padding-bottom: max(calc(60px * var(--base-ratio)), calc(calc(60 / var(--base-size)) * var(--base-percent)));
+  margin-bottom: max(calc(60px * var(--base-ratio)), calc(calc(60 / var(--base-size)) * var(--base-percent)));
   font-size: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
   line-height: 1.25;
   letter-spacing: -0.02em;

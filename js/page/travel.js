@@ -1317,6 +1317,19 @@ main.utils = {
             });
         }
     },
+	/**
+     * main.utils.debuggerGuide
+	*/
+	 debuggerGuide: function () {
+        document.addEventListener("keyup", function (e) {
+            var keyCode = e.keyCode;
+            // F9
+            if (e.key === "F9") {
+                var $debugger = $("#gridGuide");
+                $debugger.toggleClass("is-active");
+            }
+        });
+    },
 	init: function(){
 		main.utils.scroll();
 		main.utils.header();
@@ -1325,6 +1338,7 @@ main.utils = {
 		main.utils.con04();
 		main.utils.con05();
 		main.utils.dataMotion();
+		main.utils.debuggerGuide();
 	}
 }
 

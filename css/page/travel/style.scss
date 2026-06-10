@@ -2119,7 +2119,7 @@ body {
                 }
                 .link_btn {
                     display: block;
-                    padding-bottom: to_vw(60);
+                    margin-bottom: to_vw(60);
                     @include fontSize(24, -20, 30);
                     font-weight: 700;
                     color: #252525;
