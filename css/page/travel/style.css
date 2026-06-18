@@ -1651,21 +1651,21 @@ body.overflow {
     padding: max(calc(20px * var(--base-ratio)), calc(calc(20 / var(--base-size)) * var(--base-percent))) max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent))) max(calc(14px * var(--base-ratio)), calc(calc(14 / var(--base-size)) * var(--base-percent)));
   }
   #wrap.travel .sec .con04 .project_swiper .project_tit .number {
-    padding: max(calc(4px * var(--base-ratio)), calc(calc(4 / var(--base-size)) * var(--base-percent))) max(calc(8px * var(--base-ratio)), calc(calc(8 / var(--base-size)) * var(--base-percent)));
-    font-size: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
-    line-height: 1.1666666667;
+    padding: max(calc(2px * var(--base-ratio)), calc(calc(2 / var(--base-size)) * var(--base-percent))) max(calc(8px * var(--base-ratio)), calc(calc(8 / var(--base-size)) * var(--base-percent)));
+    font-size: max(calc(10px * var(--base-ratio)), calc(calc(10 / var(--base-size)) * var(--base-percent)));
+    line-height: 1.2;
     letter-spacing: 0em;
   }
   #wrap.travel .sec .con04 .project_swiper .project_tit > strong {
-    padding-top: max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent)));
-    font-size: max(calc(18px * var(--base-ratio)), calc(calc(18 / var(--base-size)) * var(--base-percent)));
-    line-height: 1.1111111111;
+    padding-top: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
+    font-size: max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent)));
+    line-height: 1.125;
     letter-spacing: -0.02em;
   }
   #wrap.travel .sec .con04 .project_swiper .project_tit > p {
-    padding-top: max(calc(10px * var(--base-ratio)), calc(calc(10 / var(--base-size)) * var(--base-percent)));
-    font-size: max(calc(14px * var(--base-ratio)), calc(calc(14 / var(--base-size)) * var(--base-percent)));
-    line-height: 1.4285714286;
+    padding-top: max(calc(6px * var(--base-ratio)), calc(calc(6 / var(--base-size)) * var(--base-percent)));
+    font-size: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
+    line-height: 1.5;
     letter-spacing: -0.02em;
   }
   #wrap.travel .sec .con04 .project_swiper .link_txt {
@@ -2068,6 +2068,10 @@ body.overflow {
     transform: scale(2);
   }
 }
+.popup_wrap.active .btn_close {
+  opacity: 1;
+  transition-delay: 0.6s;
+}
 .popup_wrap .dim_box {
   position: fixed;
   top: 0;
@@ -2108,6 +2112,8 @@ body.overflow {
   width: max(calc(44px * var(--base-ratio)), calc(calc(44 / var(--base-size)) * var(--base-percent)));
   height: max(calc(44px * var(--base-ratio)), calc(calc(44 / var(--base-size)) * var(--base-percent)));
   background: url("../../../images/button/close_bk.svg") no-repeat 0 0/cover;
+  opacity: 0;
+  transition: opacity 0.4s;
 }
 @media (max-width: 767px) {
   .popup_wrap .btn_close {
@@ -2341,8 +2347,8 @@ body.overflow {
   }
   .popup_wrap .content_wrap .con01 .txt_box .sub_tit {
     padding-bottom: max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent)));
-    font-size: max(calc(18px * var(--base-ratio)), calc(calc(18 / var(--base-size)) * var(--base-percent)));
-    line-height: 1.2222222222;
+    font-size: max(calc(14px * var(--base-ratio)), calc(calc(14 / var(--base-size)) * var(--base-percent)));
+    line-height: 1.2857142857;
     letter-spacing: -0.02em;
   }
   .popup_wrap .content_wrap .con02 .info_box > p {
@@ -2357,16 +2363,17 @@ body.overflow {
     margin-bottom: max(calc(30px * var(--base-ratio)), calc(calc(30 / var(--base-size)) * var(--base-percent)));
   }
   .popup_wrap .content_wrap .con02 .desc_box h4 {
-    font-size: max(calc(18px * var(--base-ratio)), calc(calc(18 / var(--base-size)) * var(--base-percent)));
-    line-height: 1.2222222222;
+    font-size: max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent)));
+    line-height: 1.125;
     letter-spacing: -0.02em;
   }
   .popup_wrap .content_wrap .con02 .desc_box .sub_txt {
-    font-size: max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent)));
-    line-height: 1.625;
+    font-size: max(calc(14px * var(--base-ratio)), calc(calc(14 / var(--base-size)) * var(--base-percent)));
+    line-height: 1.7142857143;
     letter-spacing: -0.03em;
   }
   .popup_wrap .content_wrap .con02 .link_btn {
+    margin-bottom: max(calc(10px * var(--base-ratio)), calc(calc(10 / var(--base-size)) * var(--base-percent)));
     padding-bottom: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
     font-size: max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent)));
     line-height: 1.375;

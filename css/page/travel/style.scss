@@ -1524,16 +1524,16 @@ body {
                             }
                             .project_tit {
                                 .number {
-                                    padding: to_vw(4) to_vw(8);
-                                    @include fontSize(12, 0, 14);
+                                    padding: to_vw(2) to_vw(8);
+                                    @include fontSize(10, 0, 12);
                                 }
                                 > strong {
-                                    padding-top: to_vw(16);
-                                    @include fontSize(18, -20, 20);
+                                    padding-top: to_vw(12);
+                                    @include fontSize(16, -20, 18);
                                 }
                                 > p {
-                                    padding-top: to_vw(10);
-                                    @include fontSize(14, -20, 20);
+                                    padding-top: to_vw(6);
+                                    @include fontSize(12, -20, 18);
                                 }
                             }
                             .link_txt {
@@ -1968,6 +1968,10 @@ body {
                 transform: scale(2);
             }
         }
+        .btn_close {
+            opacity: 1;
+            transition-delay: 0.6s;
+        }
     }
     .dim_box {
         position: fixed;
@@ -2009,6 +2013,9 @@ body {
         width: to_vw(44);
         height: to_vw(44);
         background: url('../../../images/button/close_bk.svg') no-repeat 0 0 / cover;
+        opacity: 0;
+        transition: opacity 0.4s;
+       
 
         @include media(false, mobile){
             top: to_vw(20);
@@ -2236,7 +2243,7 @@ body {
                     .txt_box {
                         .sub_tit {
                             padding-bottom: to_vw(16);
-                            @include fontSize(18, -20, 22);
+                            @include fontSize(14, -20, 18);
                         }
                     }
                 }
@@ -2253,13 +2260,14 @@ body {
                             margin-bottom: to_vw(30);
                         }
                         h4 {
-                            @include fontSize(18, -20, 22);
+                            @include fontSize(16, -20, 18);
                         }
                         .sub_txt {
-                            @include fontSize(16, -30, 26);
+                            @include fontSize(14, -30, 24);
                         }
                     }
                     .link_btn {
+                        margin-bottom: to_vw(10);
                         padding-bottom: to_vw(24);
                         @include fontSize(16, -20, 22);
 
