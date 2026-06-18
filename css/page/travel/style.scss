@@ -2205,7 +2205,7 @@ body {
                         }
                     }
                     .link_btn {
-                        padding-bottom: to_vw(48);
+                        margin-bottom: to_vw(24);
                         @include fontSize(18, -20, 24);
                     }
                 }
@@ -2267,8 +2267,6 @@ body {
                         }
                     }
                     .link_btn {
-                        margin-bottom: to_vw(10);
-                        padding-bottom: to_vw(24);
                         @include fontSize(16, -20, 22);
 
                         .icon_link {

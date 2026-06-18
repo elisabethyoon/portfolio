@@ -2313,7 +2313,7 @@ body.overflow {
     letter-spacing: -0.03em;
   }
   .popup_wrap .content_wrap .con02 .link_btn {
-    padding-bottom: max(calc(48px * var(--base-ratio)), calc(calc(48 / var(--base-size)) * var(--base-percent)));
+    margin-bottom: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
     font-size: max(calc(18px * var(--base-ratio)), calc(calc(18 / var(--base-size)) * var(--base-percent)));
     line-height: 1.3333333333;
     letter-spacing: -0.02em;
@@ -2373,8 +2373,6 @@ body.overflow {
     letter-spacing: -0.03em;
   }
   .popup_wrap .content_wrap .con02 .link_btn {
-    margin-bottom: max(calc(10px * var(--base-ratio)), calc(calc(10 / var(--base-size)) * var(--base-percent)));
-    padding-bottom: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
     font-size: max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent)));
     line-height: 1.375;
     letter-spacing: -0.02em;
