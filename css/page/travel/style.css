@@ -2223,10 +2223,13 @@ body.overflow {
   color: #444;
 }
 .popup_wrap .content_wrap .con02 .link_btn {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
   margin-bottom: max(calc(60px * var(--base-ratio)), calc(calc(60 / var(--base-size)) * var(--base-percent)));
   font-size: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
-  line-height: 1.25;
+  line-height: 1.4166666667;
   letter-spacing: -0.02em;
   font-weight: 700;
   color: #252525;
@@ -2306,11 +2309,14 @@ body.overflow {
   .popup_wrap .content_wrap .con02 .link_btn {
     padding-bottom: max(calc(48px * var(--base-ratio)), calc(calc(48 / var(--base-size)) * var(--base-percent)));
     font-size: max(calc(18px * var(--base-ratio)), calc(calc(18 / var(--base-size)) * var(--base-percent)));
-    line-height: 1.1111111111;
+    line-height: 1.3333333333;
     letter-spacing: -0.02em;
   }
 }
 @media (max-width: 767px) {
+  .popup_wrap .content_wrap.active .con01, .popup_wrap .content_wrap.active .con02 {
+    opacity: 1;
+  }
   .popup_wrap .content_wrap .con {
     padding: max(calc(60px * var(--base-ratio)), calc(calc(60 / var(--base-size)) * var(--base-percent))) max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent))) max(calc(40px * var(--base-ratio)), calc(calc(40 / var(--base-size)) * var(--base-percent)));
   }
@@ -2319,6 +2325,11 @@ body.overflow {
     line-height: 1.0666666667;
     letter-spacing: 0.01em;
     margin-bottom: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
+  }
+  .popup_wrap .content_wrap .con01, .popup_wrap .content_wrap .con02 {
+    opacity: 0;
+    transform: translateX(0);
+    transition: opacity 0.45s;
   }
   .popup_wrap .content_wrap .con01 {
     width: 100%;
@@ -2358,7 +2369,11 @@ body.overflow {
   .popup_wrap .content_wrap .con02 .link_btn {
     padding-bottom: max(calc(24px * var(--base-ratio)), calc(calc(24 / var(--base-size)) * var(--base-percent)));
     font-size: max(calc(16px * var(--base-ratio)), calc(calc(16 / var(--base-size)) * var(--base-percent)));
-    line-height: 1.25;
+    line-height: 1.375;
     letter-spacing: -0.02em;
+  }
+  .popup_wrap .content_wrap .con02 .link_btn .icon_link {
+    width: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
+    height: max(calc(12px * var(--base-ratio)), calc(calc(12 / var(--base-size)) * var(--base-percent)));
   }
 }

@@ -382,7 +382,7 @@ main.utils = {
 		});
 
 
-		let projectImgSrc = '../../images/project/subpage-image';
+		let projectImgSrc = '../images/project/subpage-image';
 
 		let popupDataList = [
 			{
